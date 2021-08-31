@@ -31,12 +31,14 @@
     "geometry"
     "float")
    (LaTeX-add-labels
-    "sec:org670c933"
-    "sec:orga9a9cec"
-    "sec:orgb7e017c"
-    "sec:org757efde"
-    "sec:orge26969c"
-    "sec:org75925d2"
-    "sec:org91cbf8c"))
+    "sec:org552abbb"
+    "sec:orgf5aeeba"
+    "sec:org7be2c2d"
+    "fig:nmos-testbench"
+    "fig:nmos-id-vgs"
+    "sec:orgbdf368f"
+    "sec:org8788c18"
+    "sec:org01fe67a"
+    "sec:org4d77223"))
  :latex)
 

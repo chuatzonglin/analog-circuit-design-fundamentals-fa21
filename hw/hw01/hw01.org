@@ -90,7 +90,6 @@ return 1.8 - 40e-6*20e3
    : 4.1340000000000004e-07
 
 * Problem 2
-$W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}}$
 a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    #+begin_export latex
    \begin{equation*}
@@ -235,6 +234,30 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       : 2.306805074971165e-06
 
 * Problem 3
+1. Testbench and I_{D}-V_{GS} characteristics of NMOS and PMOS
+   a. NMOS
+      a. Testbench
+         #+CAPTION: NMOS Testbench
+         #+NAME: fig:nmos-testbench
+         #+attr_latex: :width 300px
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/a/nmos-testbench.pdf]]
+      b. I_{D}-V_{GS}
+         #+CAPTION: NMOS I_{D}-V_{GS}
+         #+NAME: fig:nmos-id-vgs
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/a/nmos-id-vgs.pdf]]
+   b. PMOS
+      a. Testbench
+      b. I_{D}-V_{GS}
+2. $\mu_{n(p)}C_{OX}$ and $V_{THn(p)}$
+
+   a. NMOS
+      a. $\mu_{n}C_{OX}$
+      b. $V_{THn}$
+   b. PMOS
+      a. $\mu_{p}C_{OX}$
+      b. $V_{THp}$
 
 * Problem 4
 * Problem 5
