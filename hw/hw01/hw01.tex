@@ -1,4 +1,4 @@
-% Created 2021-08-31 Tue 20:28
+% Created 2021-08-31 Tue 20:59
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org8e533c9}
+\label{sec:org670c933}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{align}
@@ -75,13 +75,13 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org2ec1563}
+\label{sec:orga9a9cec}
 \(W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}}\)
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
 \begin{align}
-V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
 V_{TH} &= V_{TH0} = 0.33 V \\
 \end{align}
 \end{equation*}
@@ -123,31 +123,52 @@ W_{3} &= 1.37 \mu{}m
 \item Transistor M\textsubscript{1}
 \begin{equation*}
 \begin{align}
-V_{SB} &= 2.5 V - 2.5 V = 0 V \\
+V_{BS} &= 2.5 V - 2.5 V = 0 V \\
 \\
-V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
 V_{TH} &= V_{TH0} = 0.33 V \\
-\end{align}
-\end{equation*}
-\begin{equation*}
-\begin{align}
+\\
 W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
 W_{1} &= 2.72 \mu{}m
 \end{align}
 \end{equation*}
+
 \item Transistor M\textsubscript{2}
+\begin{equation*}
+\begin{align}
+V_{BS} &= 2.5 V - 1.7 V = 0.8 V \\
+\\
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} = 0.43 V \\
+\\
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{2} &= 8.23 \mu{}m
+\end{align}
+\end{equation*}
+
 \item Transistor M\textsubscript{3}
+\begin{equation*}
+\begin{align}
+V_{BS} &= 2.5 V - 1.0 V = 1.5 V \\
+\\
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} = 0.49 V \\
+\\
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{3} &= 2.31 \mu{}m
+\end{align}
+\end{equation*}
 \end{enumerate}
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org88ba6eb}
+\label{sec:orgb7e017c}
 \section{Problem 4}
-\label{sec:orgbc2a7f1}
+\label{sec:org757efde}
 \section{Problem 5}
-\label{sec:orgd297614}
+\label{sec:orge26969c}
 \section{Problem 6}
-\label{sec:orgdda4120}
+\label{sec:org75925d2}
 \section{Problem 7}
-\label{sec:org18d6755}
+\label{sec:org91cbf8c}
 \end{document}
