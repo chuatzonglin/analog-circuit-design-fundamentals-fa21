@@ -18,9 +18,9 @@
 #+begin_comment
 #+begin_export latex
 \begin{equation*}
-\begin{align*}
+\begin{align}
 
-\end{align*}
+\end{align}
 \end{equation*}
 #+end_export
 #+end_comment
@@ -29,20 +29,20 @@
 For $I_{D} = 40 \mu{}A$:
 #+begin_export latex
 \begin{equation*}
-\begin{align*}
+\begin{align}
 I_{D} &= \frac{1.8V - V_{D}}{R} \\
 V_{D} &= 1.8V - I_{D}R \\
 \underline{V_{D} &= 1.0V}
-\end{align*}
+\end{align}
 \end{equation*}
 #+end_export
 Saturation region:
 #+begin_export latex
 \begin{equation*}
-\begin{align*}
+\begin{align}
 V_{GS} &= 1.0V > V_{TH} \\
 V_{GS} - V_{TH}&= 0.4V < V_{DS} \\
-\end{align*}
+\end{align}
 \end{equation*}
 #+end_export
 
@@ -56,12 +56,12 @@ return 1.8 - 40e-6*20e3
 1. $\lambda = 0 V^{-1}$
    #+begin_export latex
    \begin{equation*}
-   \begin{align*}
+   \begin{align}
    I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2} \\
    L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2} \\
    \underline{L &= 0.39 \mu{}m}
+   \end{align}
    \end{equation*}
-   \end{align*}
    #+end_export
 
    #+begin_src python :exports none
@@ -74,12 +74,12 @@ return 1.8 - 40e-6*20e3
 2. $\lambda = 0.06 V^{-1}$
    #+begin_export latex
    \begin{equation*}
-   \begin{align*}
+   \begin{align}
    I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
    L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
    \underline{L &= 0.41 \mu{}m}
+   \end{align}
    \end{equation*}
-   \end{align*}
    #+end_export
 
    #+begin_src python :exports none
@@ -90,6 +90,98 @@ return 1.8 - 40e-6*20e3
    : 4.1340000000000004e-07
 
 * Problem 2
+$W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}}$
+a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
+   #+begin_export latex
+   \begin{equation*}
+   \begin{align}
+   V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+   V_{TH} &= V_{TH0} = 0.33 V \\
+   \end{align}
+   \end{equation*}
+   #+end_export
+   1. Transistor M_{1}
+      #+begin_export latex
+      \begin{equation*}
+      \begin{align}
+      V_{SG} &= 2.5V - 1.7 V  = 0.8 V \\
+      \\
+      I_{D} &= \frac{\mu_{p}C_{OX}}{2}\frac{W}{L}(V_{SG} - V_{TH})^{2} \\
+      W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+      W_{1} &= 2.72 \mu{}m
+      \end{align}
+      \end{equation*}
+      #+end_export
+
+      #+begin_src python :exports none
+      return (2*0.4e-6*90e-6)/((120e-6)*(0.8 - 0.33)**2)
+      #+end_src
+
+      #+RESULTS:
+      : 2.716161158895427e-06
+
+   2. Transistor M_{2}
+      #+begin_export latex
+      \begin{equation*}
+      \begin{align}
+      V_{SG} &= 1.7 V - 1 V  = 0.7 V \\
+      \\
+      W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+      W_{2} &= 4.38 \mu{}m
+      \end{align}
+      \end{equation*}
+      #+end_export
+
+      #+begin_src python :exports none
+      return (2*0.4e-6*90e-6)/((120e-6)*(0.7 - 0.33)**2)
+      #+end_src
+
+      #+RESULTS:
+      : 4.3827611395178975e-06
+
+   3. Transistor M_{3}
+      #+begin_export latex
+      \begin{equation*}
+      \begin{align}
+      V_{SG} &= 1 V \\
+      \\
+      W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+      W_{3} &= 1.37 \mu{}m
+      \end{align}
+      \end{equation*}
+      #+end_export
+
+      #+begin_src python :exports none
+      return (2*0.4e-6*90e-6)/((120e-6)*(1 - 0.33)**2)
+      #+end_src
+
+      #+RESULTS:
+      : 1.3366005791935844e-06
+
+b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
+   1. Transistor M_{1}
+      #+begin_export latex
+      \begin{equation*}
+      \begin{align}
+      V_{SB} &= 2.5 V - 2.5 V = 0 V \\
+      \\
+      V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+      V_{TH} &= V_{TH0} = 0.33 V \\
+      \\
+      W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+      W_{1} &= 2.72 \mu{}m
+      \end{align}
+      \end{equation*}
+      #+end_export
+      #+begin_export latex
+      \begin{equation*}
+      \begin{align}
+      \end{align}
+      \end{equation*}
+      #+end_export
+   2. Transistor M_{2}
+   3. Transistor M_{3}
+
 * Problem 3
 * Problem 4
 * Problem 5

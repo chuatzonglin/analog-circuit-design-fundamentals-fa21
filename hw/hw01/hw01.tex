@@ -1,4 +1,4 @@
-% Created 2021-08-31 Tue 17:55
+% Created 2021-08-31 Tue 20:28
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,53 +37,117 @@
 
 
 \section{Problem 1}
-\label{sec:org7548468}
+\label{sec:org8e533c9}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
-\begin{align*}
+\begin{align}
 I_{D} &= \frac{1.8V - V_{D}}{R} \\
 V_{D} &= 1.8V - I_{D}R \\
-\tcbox{V_{D} &= 1.0V}
-\end{align*}
+\underline{V_{D} &= 1.0V}
+\end{align}
 \end{equation*}
 Saturation region:
 \begin{equation*}
-\begin{align*}
+\begin{align}
 V_{GS} &= 1.0V > V_{TH} \\
 V_{GS} - V_{TH}&= 0.4V < V_{DS} \\
-\end{align*}
+\end{align}
 \end{equation*}
 
 \begin{enumerate}
 \item \(\lambda = 0 V^{-1}\)
 \begin{equation*}
-\begin{align*}
+\begin{align}
 I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2} \\
 L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2} \\
-\tcbox{L &= 0.39 \mu{}m}
+\underline{L &= 0.39 \mu{}m}
+\end{align}
 \end{equation*}
-\end{align*}
 
 \item \(\lambda = 0.06 V^{-1}\)
 \begin{equation*}
-\begin{align*}
+\begin{align}
 I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
 L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
-\mblackout{L &= 0.41 \mu{}m}
+\underline{L &= 0.41 \mu{}m}
+\end{align}
 \end{equation*}
-\end{align*}
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orgbc40fd9}
+\label{sec:org2ec1563}
+\(W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}}\)
+\begin{enumerate}
+\item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
+\begin{equation*}
+\begin{align}
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} = 0.33 V \\
+\end{align}
+\end{equation*}
+\begin{enumerate}
+\item Transistor M\textsubscript{1}
+\begin{equation*}
+\begin{align}
+V_{SG} &= 2.5V - 1.7 V  = 0.8 V \\
+\\
+I_{D} &= \frac{\mu_{p}C_{OX}}{2}\frac{W}{L}(V_{SG} - V_{TH})^{2} \\
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{1} &= 2.72 \mu{}m
+\end{align}
+\end{equation*}
+
+\item Transistor M\textsubscript{2}
+\begin{equation*}
+\begin{align}
+V_{SG} &= 1.7 V - 1 V  = 0.7 V \\
+\\
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{2} &= 4.38 \mu{}m
+\end{align}
+\end{equation*}
+
+\item Transistor M\textsubscript{3}
+\begin{equation*}
+\begin{align}
+V_{SG} &= 1 V \\
+\\
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{3} &= 1.37 \mu{}m
+\end{align}
+\end{equation*}
+\end{enumerate}
+
+\item Bulk terminals are attached to the V\textsubscript{DD}, \(V_{B} = V_{DD}\).
+\begin{enumerate}
+\item Transistor M\textsubscript{1}
+\begin{equation*}
+\begin{align}
+V_{SB} &= 2.5 V - 2.5 V = 0 V \\
+\\
+V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{SB}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} &= V_{TH0} = 0.33 V \\
+\end{align}
+\end{equation*}
+\begin{equation*}
+\begin{align}
+W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
+W_{1} &= 2.72 \mu{}m
+\end{align}
+\end{equation*}
+\item Transistor M\textsubscript{2}
+\item Transistor M\textsubscript{3}
+\end{enumerate}
+\end{enumerate}
+
 \section{Problem 3}
-\label{sec:org03a3502}
+\label{sec:org88ba6eb}
 \section{Problem 4}
-\label{sec:org01f92e7}
+\label{sec:orgbc2a7f1}
 \section{Problem 5}
-\label{sec:orgf8fb051}
+\label{sec:orgd297614}
 \section{Problem 6}
-\label{sec:org7667dec}
+\label{sec:orgdda4120}
 \section{Problem 7}
-\label{sec:orgc9ac972}
+\label{sec:org18d6755}
 \end{document}
