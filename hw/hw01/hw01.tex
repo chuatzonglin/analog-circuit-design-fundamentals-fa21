@@ -1,0 +1,89 @@
+% Created 2021-08-31 Tue 17:55
+% Intended LaTeX compiler: pdflatex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+
+\usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
+\usepackage{float}
+\DeclareUnicodeCharacter{2212}{-}
+\setcounter{secnumdepth}{0}
+\author{Tzong Lin Chua}
+\date{\today}
+\title{EE4C10 Analog Circuit Design Fundamentals\\\medskip
+\large Homework Assignment I }
+\hypersetup{
+ pdfauthor={Tzong Lin Chua},
+ pdftitle={EE4C10 Analog Circuit Design Fundamentals},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Problem 1}
+\label{sec:org7548468}
+For \(I_{D} = 40 \mu{}A\):
+\begin{equation*}
+\begin{align*}
+I_{D} &= \frac{1.8V - V_{D}}{R} \\
+V_{D} &= 1.8V - I_{D}R \\
+\tcbox{V_{D} &= 1.0V}
+\end{align*}
+\end{equation*}
+Saturation region:
+\begin{equation*}
+\begin{align*}
+V_{GS} &= 1.0V > V_{TH} \\
+V_{GS} - V_{TH}&= 0.4V < V_{DS} \\
+\end{align*}
+\end{equation*}
+
+\begin{enumerate}
+\item \(\lambda = 0 V^{-1}\)
+\begin{equation*}
+\begin{align*}
+I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2} \\
+L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2} \\
+\tcbox{L &= 0.39 \mu{}m}
+\end{equation*}
+\end{align*}
+
+\item \(\lambda = 0.06 V^{-1}\)
+\begin{equation*}
+\begin{align*}
+I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
+L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
+\mblackout{L &= 0.41 \mu{}m}
+\end{equation*}
+\end{align*}
+\end{enumerate}
+
+\section{Problem 2}
+\label{sec:orgbc40fd9}
+\section{Problem 3}
+\label{sec:org03a3502}
+\section{Problem 4}
+\label{sec:org01f92e7}
+\section{Problem 5}
+\label{sec:orgf8fb051}
+\section{Problem 6}
+\label{sec:org7667dec}
+\section{Problem 7}
+\label{sec:orgc9ac972}
+\end{document}
