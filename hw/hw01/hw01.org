@@ -29,20 +29,20 @@
 For $I_{D} = 40 \mu{}A$:
 #+begin_export latex
 \begin{equation*}
-\begin{align}
+\begin{aligned}
 I_{D} &= \frac{1.8V - V_{D}}{R} \\
 V_{D} &= 1.8V - I_{D}R \\
 \underline{V_{D} &= 1.0V}
-\end{align}
+\end{aligned}
 \end{equation*}
 #+end_export
 Saturation region:
 #+begin_export latex
 \begin{equation*}
-\begin{align}
+\begin{aligned}
 V_{GS} &= 1.0V > V_{TH} \\
 V_{GS} - V_{TH}&= 0.4V < V_{DS} \\
-\end{align}
+\end{aligned}
 \end{equation*}
 #+end_export
 
@@ -56,11 +56,11 @@ return 1.8 - 40e-6*20e3
 1. $\lambda = 0 V^{-1}$
    #+begin_export latex
    \begin{equation*}
-   \begin{align}
+   \begin{aligned}
    I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2} \\
    L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2} \\
    \underline{L &= 0.39 \mu{}m}
-   \end{align}
+   \end{aligned}
    \end{equation*}
    #+end_export
 
@@ -74,11 +74,11 @@ return 1.8 - 40e-6*20e3
 2. $\lambda = 0.06 V^{-1}$
    #+begin_export latex
    \begin{equation*}
-   \begin{align}
+   \begin{aligned}
    I_{D} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
    L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_{DS}) \\
    \underline{L &= 0.41 \mu{}m}
-   \end{align}
+   \end{aligned}
    \end{equation*}
    #+end_export
 
@@ -93,22 +93,22 @@ return 1.8 - 40e-6*20e3
 a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    #+begin_export latex
    \begin{equation*}
-   \begin{align}
+   \begin{aligned}
    V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
    V_{TH} &= V_{TH0} = 0.33 V \\
-   \end{align}
+   \end{aligned}
    \end{equation*}
    #+end_export
    1. Transistor M_{1}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{SG} &= 2.5V - 1.7 V  = 0.8 V \\
       \\
       I_{D} &= \frac{\mu_{p}C_{OX}}{2}\frac{W}{L}(V_{SG} - V_{TH})^{2} \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{1} &= 2.72 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
@@ -122,12 +122,12 @@ a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    2. Transistor M_{2}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{SG} &= 1.7 V - 1 V  = 0.7 V \\
       \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{2} &= 4.38 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
@@ -141,12 +141,12 @@ a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    3. Transistor M_{3}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{SG} &= 1 V \\
       \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{3} &= 1.37 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
@@ -161,7 +161,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    1. Transistor M_{1}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{BS} &= 2.5 V - 2.5 V = 0 V \\
       \\
       V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
@@ -169,14 +169,14 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{1} &= 2.72 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
    2. Transistor M_{2}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{BS} &= 2.5 V - 1.7 V = 0.8 V \\
       \\
       V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
@@ -184,7 +184,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{2} &= 8.23 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
@@ -206,7 +206,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    3. Transistor M_{3}
       #+begin_export latex
       \begin{equation*}
-      \begin{align}
+      \begin{aligned}
       V_{BS} &= 2.5 V - 1.0 V = 1.5 V \\
       \\
       V_{TH} &= V_{TH0} + \gamma{}(\sqrt{2\varphi_{F} + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
@@ -214,7 +214,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       \\
       W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
       W_{3} &= 2.31 \mu{}m
-      \end{align}
+      \end{aligned}
       \end{equation*}
       #+end_export
 
@@ -252,8 +252,45 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       b. I_{D}-V_{GS}
 2. $\mu_{n(p)}C_{OX}$ and $V_{THn(p)}$
 
+   Assuming that channel length modulation is negligible, $\mu_{n}C_{OX}$ for NMOS can be derived
+   from the following relation:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{THn})^2 \\
+   \frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W} &=  (V_{GS} - V_{THn})^2 \\
+   \sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  V_{GS} - V_{THn} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   Since V_{THn} is constant at specific temperatures.
+   Differentiating both sides will give:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{d}{dV_{GS}}\sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  \frac{d}{dV_{GS}}(V_{GS} - V_{THn}) \\
+   \frac{1}{2} \frac{dI_{D}}{dV_{GS}} \sqrt{\frac{2}{I_{D}\mu_{n}C_{ox}}\frac{L}{W}} &=  1 \\
+   \sqrt{\mu_{n}C_{ox}} &= \frac{1}{2} \frac{dI_{D}}{dV_{GS}} \sqrt{\frac{2}{I_{D}}\frac{L}{W}} \\
+   \mu_{n}C_{ox} &= \frac{1}{2} \frac{L}{W} \frac{1}{I_{D}}(\frac{dI_{D}}{dV_{GS}})^{2} \\
+   \mu_{n}C_{ox} &= \frac{1}{6 I_{D}}(\frac{dI_{D}}{dV_{GS}})^{2} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   In the case for PMOS, the relation becomes:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \mu_{p}C_{ox} &= \frac{1}{6 I_{S}}(\frac{dI_{S}}{dV_{SG}})^{2} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
    a. NMOS
       a. $\mu_{n}C_{OX}$
+         #+CAPTION: NMOS \mu_{n}C_{OX}-V_{GS}
+         #+NAME: fig:nmos-ucox-vgs
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/b/nmos-ucox-vgs.pdf]]
       b. $V_{THn}$
    b. PMOS
       a. $\mu_{p}C_{OX}$
