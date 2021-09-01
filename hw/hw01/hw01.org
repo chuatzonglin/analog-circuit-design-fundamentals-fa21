@@ -310,6 +310,114 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       b. $V_{THp}$
 
 * Problem 4
+a. Testbench and I_{D}-V_{DS} characteristics of NMOS and PMOS
+   a. NMOS
+      1. Testbench
+         #+CAPTION: NMOS Testbench
+         #+NAME: fig:nmos-testbench-2
+         #+attr_latex: :width 300px
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q4/a/nmos-testbench.pdf]]
+      2. I_{D}-V_{DS} characteristics
+         #+CAPTION: NMOS I_{D}-V_{DS}
+         #+NAME: fig:nmos-id-vds
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q4/a/nmos-id-vds.pdf]]
+   b. PMOS
+      1. Testbench
+      2. I_{D}-V_{DS} characteristics
+b. $\lambda_{n(p)}$
+
+   Drain current characteristics for NMOS under saturation conditions:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2(1 + \lambda_{n}V_{DS}) \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   Differentiating both side with respect to V_{DS}.
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{dI_{D}}{dV_{DS}} &= \frac{d}{dV_{DS}} (\frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2(1 + \lambda_{n} V_{DS})) \\
+   \frac{dI_{D}}{dV_{DS}} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2 \lambda_{n} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   Assuming that the body-effect is small:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{D} &\approx \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2 \\
+   \\
+   \frac{dI_{D}}{dV_{DS}} &\approx I_{D} \lambda_{n} \\
+   \lambda_{n} &\approx \frac{1}{I_{D}} \frac{dI_{D}}{dV_{DS}}
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   In the case of PMOS:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{SD}}
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   a. $\lambda_{n} = 0.18 V^{-1}$
+      #+CAPTION: NMOS Testbench
+      #+NAME: fig:nmos-testbench-2
+      #+attr_latex: :width 350px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q4/b/nmos-d-id-id.pdf]]
+
+      #+begin_src python :results file :exports none
+      from pandas import read_csv
+      import matplotlib.pyplot as plt
+      import numpy as np
+
+      # Import graph format
+      try:
+          plt.style.use("../../../../graph-formats/myGraphs1.mplstyle")
+      except:
+          pass
+
+      # Read data
+      df = read_csv("data/q4/b/nmos-d-id-id.txt", delimiter = "\t")
+
+      # Min value
+      argmin = np.argmin(df.iloc[:, 1].to_numpy())
+
+      # Plot
+      plt.plot(df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy())
+      plt.scatter(df.iloc[:,0].to_numpy()[argmin], df.iloc[:,1].to_numpy()[argmin], c = "r", marker = "x")
+
+      # Label
+      plt.xlabel("$V_{DS}$")
+      plt.ylabel("$\lambda_{n}$")
+
+      # Range
+      xlimit = (0, 1.8)
+      ylimit = (0, 0.2)
+      plt.ylim(ylimit)
+      plt.xlim(xlimit)
+
+      # Grid
+      plt.minorticks_on()
+      plt.grid()
+
+      fname = "img/q4/b/nmos-d-id-id.svg"
+      plt.savefig(fname)
+      return fname
+      #+end_src
+
+      #+RESULTS:
+      [[file:img/q4/b/nmos-d-id-id.svg]]
+
+   b. $\lambda_{p}$
+
+
 * Problem 5
 * Problem 6
 * Problem 7

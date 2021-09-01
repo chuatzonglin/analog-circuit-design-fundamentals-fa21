@@ -1,4 +1,4 @@
-% Created 2021-09-01 Wed 09:50
+% Created 2021-09-01 Wed 11:15
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org9affcb2}
+\label{sec:org73ea295}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org3732bc0}
+\label{sec:orgc38163f}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org4723046}
+\label{sec:org767fb1e}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -247,11 +247,79 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org783ffcc}
+\label{sec:org14cf5a7}
+\begin{enumerate}
+\item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
+\begin{enumerate}
+\item NMOS
+\begin{enumerate}
+\item Testbench
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/q4/a/nmos-testbench.pdf}
+\caption{\label{fig:nmos-testbench-2}NMOS Testbench}
+\end{figure}
+\item I\textsubscript{D}-V\textsubscript{DS} characteristics
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q4/a/nmos-id-vds.pdf}
+\caption{\label{fig:nmos-id-vds}NMOS I\textsubscript{D}-V\textsubscript{DS}}
+\end{figure}
+\end{enumerate}
+\item PMOS
+\begin{enumerate}
+\item Testbench
+\item I\textsubscript{D}-V\textsubscript{DS} characteristics
+\end{enumerate}
+\end{enumerate}
+\item \(\lambda_{n(p)}\)
+
+Drain current characteristics for NMOS under saturation conditions:
+\begin{equation*}
+\begin{aligned}
+I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2(1 + \lambda_{n}V_{DS}) \\
+\end{aligned}
+\end{equation*}
+Differentiating both side with respect to V\textsubscript{DS}.
+\begin{equation*}
+\begin{aligned}
+\frac{dI_{D}}{dV_{DS}} &= \frac{d}{dV_{DS}} (\frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2(1 + \lambda_{n} V_{DS})) \\
+\frac{dI_{D}}{dV_{DS}} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2 \lambda_{n} \\
+\end{aligned}
+\end{equation*}
+Assuming that the body-effect is small:
+\begin{equation*}
+\begin{aligned}
+I_{D} &\approx \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2 \\
+\\
+\frac{dI_{D}}{dV_{DS}} &\approx I_{D} \lambda_{n} \\
+\lambda_{n} &\approx \frac{1}{I_{D}} \frac{dI_{D}}{dV_{DS}}
+\end{aligned}
+\end{equation*}
+In the case of PMOS:
+\begin{equation*}
+\begin{aligned}
+\lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{SD}}
+\end{aligned}
+\end{equation*}
+
+\begin{enumerate}
+\item \(\lambda_{n} = 0.18 V^{-1}\)
+\begin{figure}[H]
+\centering
+\includegraphics[width=350px]{img/q4/b/nmos-d-id-id.pdf}
+\caption{\label{fig:nmos-testbench-2}NMOS Testbench}
+\end{figure}
+
+\item \(\lambda_{p}\)
+\end{enumerate}
+\end{enumerate}
+
+
 \section{Problem 5}
-\label{sec:org2e0d414}
+\label{sec:org24621ab}
 \section{Problem 6}
-\label{sec:org4c8574b}
+\label{sec:org5ddee06}
 \section{Problem 7}
-\label{sec:orga4a9cd0}
+\label{sec:orgf5a7f41}
 \end{document}
