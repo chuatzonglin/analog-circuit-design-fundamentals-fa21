@@ -1,4 +1,4 @@
-% Created 2021-09-01 Wed 00:17
+% Created 2021-09-01 Wed 09:50
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:orgb51baf5}
+\label{sec:org9affcb2}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orga7d3dc1}
+\label{sec:org3732bc0}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:orge891bc5}
+\label{sec:org4723046}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -188,17 +188,24 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 \item \(\mu_{n(p)}C_{OX}\) and \(V_{THn(p)}\)
 
-Assuming that channel length modulation is negligible, \(\mu_{n}C_{OX}\) for NMOS can be derived
+Assuming that channel length modulation is negligible, \(V_{THn}\) for NMOS can be derived
 from the following relation:
-\begin{equation*}
+\begin{equation}
 \begin{aligned}
 I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{THn})^2 \\
 \frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W} &=  (V_{GS} - V_{THn})^2 \\
 \sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  V_{GS} - V_{THn} \\
 \end{aligned}
-\end{equation*}
-Since V\textsubscript{THn} is constant at specific temperatures.
-Differentiating both sides will give:
+\end{equation}
+V\textsubscript{THn} is the x-axis intercept when the saturation region is extrapolated.
+In the case of PMOS, the relation becomes:
+\begin{equation}
+\begin{aligned}
+\sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} - V_{THp} \\
+\end{aligned}
+\end{equation}
+For deriving \(\mu_{n}C_{OX}\), since V\textsubscript{THn(p)} is constant at specific temperatures.
+Differentiating both sides with respect to V\textsubscript{GS(SG)} will give:
 \begin{equation*}
 \begin{aligned}
 \frac{d}{dV_{GS}}\sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  \frac{d}{dV_{GS}}(V_{GS} - V_{THn}) \\
@@ -218,13 +225,18 @@ In the case for PMOS, the relation becomes:
 \begin{enumerate}
 \item NMOS
 \begin{enumerate}
-\item \(\mu_{n}C_{OX}\)
+\item \(\mu_{n}C_{OX} = 306 \mu{}AV^{-2}\)
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\linewidth]{img/q3/b/nmos-ucox-vgs.pdf}
 \caption{\label{fig:nmos-ucox-vgs}NMOS \(\mu\)\textsubscript{n}C\textsubscript{OX}-V\textsubscript{GS}}
 \end{figure}
-\item \(V_{THn}\)
+\item \(V_{THn} = 0.44V\)
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q3/b/nmos-sqrt-id-vgs.pdf}
+\caption{\label{fig:nmos-sqrt-id-vgs}NMOS \(\sqrt{I_{D}}-V_{GS}\)}
+\end{figure}
 \end{enumerate}
 \item PMOS
 \begin{enumerate}
@@ -235,11 +247,11 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:orgaf4225b}
+\label{sec:org783ffcc}
 \section{Problem 5}
-\label{sec:org7e27b86}
+\label{sec:org2e0d414}
 \section{Problem 6}
-\label{sec:org6481c7a}
+\label{sec:org4c8574b}
 \section{Problem 7}
-\label{sec:org42fc2a8}
+\label{sec:orga4a9cd0}
 \end{document}

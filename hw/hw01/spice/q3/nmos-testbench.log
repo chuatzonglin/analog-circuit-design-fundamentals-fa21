@@ -12,8 +12,8 @@ Ignoring BSIM parameter SFVTFLAGl
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 
-Date: Tue Aug 31 23:35:17 2021
-Total elapsed time: 0.098 seconds.
+Date: Wed Sep 01 09:27:19 2021
+Total elapsed time: 0.126 seconds.
 
 tnom = 27
 temp = 27
@@ -26,6 +26,6 @@ rejected = 0
 matrix size = 4
 fillins = 0
 solver = Normal
-Matrix Compiler1: 118 bytes object code size  0.0/0.0/[0.0]
-Matrix Compiler2:      20 opcodes  0.0/[0.0]/0.0
+Matrix Compiler1:       7 opcodes  0.0/[0.0]/0.0
+Matrix Compiler2: off  [0.0]/0.0/0.0
 
