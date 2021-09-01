@@ -255,22 +255,22 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    Assuming that channel length modulation is negligible, $V_{THn}$ for NMOS can be derived
    from the following relation:
    #+begin_export latex
-   \begin{equation}
+   \begin{equation*}
    \begin{aligned}
    I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{THn})^2 \\
    \frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W} &=  (V_{GS} - V_{THn})^2 \\
    \sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  V_{GS} - V_{THn} \\
    \end{aligned}
-   \end{equation}
+   \end{equation*}
    #+end_export
    V_{THn} is the x-axis intercept when the saturation region is extrapolated.
    In the case of PMOS, the relation becomes:
    #+begin_export latex
-   \begin{equation}
+   \begin{equation*}
    \begin{aligned}
    \sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} - V_{THp} \\
    \end{aligned}
-   \end{equation}
+   \end{equation*}
    #+end_export
    For deriving $\mu_{n}C_{OX}$, since V_{THn(p)} is constant at specific temperatures.
    Differentiating both sides with respect to V_{GS(SG)} will give:
@@ -417,7 +417,34 @@ b. $\lambda_{n(p)}$
 
    b. $\lambda_{p}$
 
-
 * Problem 5
+
 * Problem 6
+a. Small-signal Model
+   #+CAPTION: Small signal model
+   #+NAME: fig:small-signal-model
+   #+attr_latex: :width 350px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q6/a/small-signal-model.pdf]]
+b. $\lambda = 0 V^{-1}$
+c. $\lambda \neq 0 V^{-1}$
+   a. $A_{V} = \frac{v_{out}}{v_{in}}$
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      -v_{out} &= (g_{m1}v_{in} + g_{m2} v_{out})(r_{o1} // r_{o2}) \\
+      -v_{in} g_{m1}(r_{o1} // r_{o2}) &= (1 + g_{m2} (r_{o1} // r_{o2}))v_{out} \\
+      A_{V} = \frac{v_{out}}{v_{in}} &= -\frac{g_{m1}}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+
+   b. $R_{out}$
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
+      \end{aligned}
+      \end{equation*}
+      #+end_export
 * Problem 7

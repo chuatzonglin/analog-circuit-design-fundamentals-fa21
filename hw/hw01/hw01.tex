@@ -1,4 +1,4 @@
-% Created 2021-09-01 Wed 11:15
+% Created 2021-09-01 Wed 12:06
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org73ea295}
+\label{sec:org2ba0724}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orgc38163f}
+\label{sec:org150ed51}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org767fb1e}
+\label{sec:orgabf654a}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -190,20 +190,20 @@ W_{3} &= 2.31 \mu{}m
 
 Assuming that channel length modulation is negligible, \(V_{THn}\) for NMOS can be derived
 from the following relation:
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 I_{D} &= \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{THn})^2 \\
 \frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W} &=  (V_{GS} - V_{THn})^2 \\
 \sqrt{\frac{2 I_{D}}{\mu_{n}C_{ox}}\frac{L}{W}} &=  V_{GS} - V_{THn} \\
 \end{aligned}
-\end{equation}
+\end{equation*}
 V\textsubscript{THn} is the x-axis intercept when the saturation region is extrapolated.
 In the case of PMOS, the relation becomes:
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} - V_{THp} \\
 \end{aligned}
-\end{equation}
+\end{equation*}
 For deriving \(\mu_{n}C_{OX}\), since V\textsubscript{THn(p)} is constant at specific temperatures.
 Differentiating both sides with respect to V\textsubscript{GS(SG)} will give:
 \begin{equation*}
@@ -247,7 +247,7 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org14cf5a7}
+\label{sec:orga034705}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -315,11 +315,38 @@ In the case of PMOS:
 \end{enumerate}
 \end{enumerate}
 
-
 \section{Problem 5}
-\label{sec:org24621ab}
+\label{sec:orgb96392b}
+
 \section{Problem 6}
-\label{sec:org5ddee06}
+\label{sec:org956f36b}
+\begin{enumerate}
+\item Small-signal Model
+\begin{figure}[H]
+\centering
+\includegraphics[width=350px]{img/q6/a/small-signal-model.pdf}
+\caption{\label{fig:small-signal-model}Small signal model}
+\end{figure}
+\item \(\lambda = 0 V^{-1}\)
+\item \(\lambda \neq 0 V^{-1}\)
+\begin{enumerate}
+\item \(A_{V} = \frac{v_{out}}{v_{in}}\)
+\begin{equation*}
+\begin{aligned}
+-v_{out} &= (g_{m1}v_{in} + g_{m2} v_{out})(r_{o1} // r_{o2}) \\
+-v_{in} g_{m1}(r_{o1} // r_{o2}) &= (1 + g_{m2} (r_{o1} // r_{o2}))v_{out} \\
+A_{V} = \frac{v_{out}}{v_{in}} &= -\frac{g_{m1}}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
+\end{aligned}
+\end{equation*}
+
+\item \(R_{out}\)
+\begin{equation*}
+\begin{aligned}
+R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
+\end{aligned}
+\end{equation*}
+\end{enumerate}
+\end{enumerate}
 \section{Problem 7}
-\label{sec:orgf5a7f41}
+\label{sec:orgd9598b0}
 \end{document}
