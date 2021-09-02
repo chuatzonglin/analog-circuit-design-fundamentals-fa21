@@ -1,4 +1,4 @@
-% Created 2021-09-02 Thu 13:47
+% Created 2021-09-02 Thu 14:35
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org6787862}
+\label{sec:org989f2db}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org867991b}
+\label{sec:org2a258f8}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org3e1dd96}
+\label{sec:org13eea06}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -267,7 +267,7 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org21134c2}
+\label{sec:org1c04e9f}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -350,10 +350,69 @@ In the case of PMOS:
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:org8169f03}
+\label{sec:orgb63a527}
+g\textsubscript{m} for NMOS is approximately:
+\begin{equation*}
+\begin{align}
+g_{m} &\approx \frac{\partial{I_{D}}}{\partial{V_{GS}}}
+\end{align}
+\end{equation*}
+For PMOS:
+\begin{equation*}
+\begin{align}
+g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
+\end{align}
+\end{equation*}
+\begin{enumerate}
+\item \(\frac{g_{m}}{I_{D}}-V_{GS}\)
+\begin{enumerate}
+\item NMOS
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q5/a/nmos-d-id-id-vgs.pdf}
+\caption{\label{fig:nmos-d-id-id-vgs}NMOS \(\frac{g_{m}}{I_{D}}-V_{GS}\)}
+\end{figure}
+\item PMOS
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q5/a/pmos-d-is-is-vgs.pdf}
+\caption{\label{fig:pmos-d-is-is-vgs}PMOS \(\frac{g_{m}}{I_{S}}-V_{GS}\)}
+\end{figure}
+\end{enumerate}
+\item \(max(|\frac{g_{m}}{I_{D(S)}}|)\)
+\begin{enumerate}
+\item NMOS
+
+\(max(|\frac{g_{m}}{I_{D}}|) = 30.4 V^{-1}\)
+\item PMOS
+
+\(max(|\frac{g_{m}}{I_{S}}|) = 31.7 V^{-1}\)
+\end{enumerate}
+\item Slope factor, n
+\begin{enumerate}
+\item NMOS
+\begin{equation*}
+\begin{aligned}
+max(\frac{g_{m}}{I_{D}}) &= 30.4 V^{-1}\\\\
+\frac{1}{nV_{t}} &= 30.4 V^{-1}\\
+n &= \frac{1}{0.026 \times 30.4}\\
+n &= 1.27 \\
+\end{aligned}
+\end{equation*}
+\item PMOS
+\begin{equation*}
+\begin{aligned}
+max(\frac{g_{m}}{I_{S}}) &= 31.7 V^{-1}\\\\
+\frac{1}{nV_{t}} &= 31.7 V^{-1}\\
+n &= \frac{1}{0.026 \times 31.7}\\
+n &= 1.21 \\
+\end{aligned}
+\end{equation*}
+\end{enumerate}
+\end{enumerate}
 
 \section{Problem 6}
-\label{sec:org617ede8}
+\label{sec:orgc132bdc}
 \begin{enumerate}
 \item Small-signal Model
 \begin{figure}[H]
@@ -382,5 +441,5 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:orged80840}
+\label{sec:orge8d3565}
 \end{document}
