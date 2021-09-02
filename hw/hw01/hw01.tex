@@ -1,4 +1,4 @@
-% Created 2021-09-01 Wed 12:06
+% Created 2021-09-02 Thu 10:52
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org2ba0724}
+\label{sec:orgaea26fb}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org150ed51}
+\label{sec:orgeded328}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:orgabf654a}
+\label{sec:org9375af8}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -183,7 +183,17 @@ W_{3} &= 2.31 \mu{}m
 \item PMOS
 \begin{enumerate}
 \item Testbench
-\item I\textsubscript{D}-V\textsubscript{GS}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/q3/a/pmos-testbench.pdf}
+\caption{\label{fig:pmos-testbench}PMOS Testbench}
+\end{figure}
+\item I\textsubscript{S}-V\textsubscript{GD}
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q3/a/pmos-is-vgd.pdf}
+\caption{\label{fig:pmos-is-vgd}PMOS I\textsubscript{S}-V\textsubscript{GD}}
+\end{figure}
 \end{enumerate}
 \end{enumerate}
 \item \(\mu_{n(p)}C_{OX}\) and \(V_{THn(p)}\)
@@ -240,14 +250,24 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 \item PMOS
 \begin{enumerate}
-\item \(\mu_{p}C_{OX}\)
-\item \(V_{THp}\)
+\item \(\mu_{p}C_{OX} = 294 \mu{}AV^{-2}\)
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q3/b/pmos-ucox-vgd.pdf}
+\caption{\label{fig:pmos-ucox-vgd}PMOS \(\mu\)\textsubscript{p}C\textsubscript{OX}-V\textsubscript{GD}}
+\end{figure}
+\item \(V_{THp} = 1.8V - 1.38V = 0.42V\)
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q3/b/pmos-sqrt-is-vgd.pdf}
+\caption{\label{fig:nmos-sqrt-is-vgd}PMOS \(\sqrt{I_{S}}-V_{GD}\)}
+\end{figure}
 \end{enumerate}
 \end{enumerate}
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:orga034705}
+\label{sec:org6338f52}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -316,10 +336,10 @@ In the case of PMOS:
 \end{enumerate}
 
 \section{Problem 5}
-\label{sec:orgb96392b}
+\label{sec:org83713d3}
 
 \section{Problem 6}
-\label{sec:org956f36b}
+\label{sec:org1053f6e}
 \begin{enumerate}
 \item Small-signal Model
 \begin{figure}[H]
@@ -348,5 +368,5 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:orgd9598b0}
+\label{sec:org3054950}
 \end{document}

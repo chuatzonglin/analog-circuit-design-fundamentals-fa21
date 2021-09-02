@@ -249,7 +249,16 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          [[file:img/q3/a/nmos-id-vgs.pdf]]
    b. PMOS
       a. Testbench
-      b. I_{D}-V_{GS}
+         #+CAPTION: PMOS Testbench
+         #+NAME: fig:pmos-testbench
+         #+attr_latex: :width 300px
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/a/pmos-testbench.pdf]]
+      b. I_{S}-V_{GD}
+         #+CAPTION: PMOS I_{S}-V_{GD}
+         #+NAME: fig:pmos-is-vgd
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/a/pmos-is-vgd.pdf]]
 2. $\mu_{n(p)}C_{OX}$ and $V_{THn(p)}$
 
    Assuming that channel length modulation is negligible, $V_{THn}$ for NMOS can be derived
@@ -306,8 +315,16 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          #+ATTR_LATEX: :placement [H]
          [[file:img/q3/b/nmos-sqrt-id-vgs.pdf]]
    b. PMOS
-      a. $\mu_{p}C_{OX}$
-      b. $V_{THp}$
+      a. $\mu_{p}C_{OX} = 294 \mu{}AV^{-2}$
+         #+CAPTION: PMOS \mu_{p}C_{OX}-V_{GD}
+         #+NAME: fig:pmos-ucox-vgd
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/b/pmos-ucox-vgd.pdf]]
+      b. $V_{THp} = 1.8V - 1.38V = 0.42V$
+         #+CAPTION: PMOS $\sqrt{I_{S}}-V_{GD}$
+         #+NAME: fig:nmos-sqrt-is-vgd
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q3/b/pmos-sqrt-is-vgd.pdf]]
 
 * Problem 4
 a. Testbench and I_{D}-V_{DS} characteristics of NMOS and PMOS
