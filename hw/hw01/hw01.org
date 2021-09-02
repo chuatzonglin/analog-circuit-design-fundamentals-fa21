@@ -277,7 +277,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
-   \sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} - V_{THp} \\
+   \sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} + V_{THp} \\
    \end{aligned}
    \end{equation*}
    #+end_export
@@ -304,7 +304,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    #+end_export
 
    a. NMOS
-      a. $\mu_{n}C_{OX} = 306 \mu{}AV^{-2}$
+      a. $\mu_{n}C_{OX}$
          #+CAPTION: NMOS \mu_{n}C_{OX}-V_{GS}
          #+NAME: fig:nmos-ucox-vgs
          #+ATTR_LATEX: :placement [H]
@@ -315,7 +315,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          #+ATTR_LATEX: :placement [H]
          [[file:img/q3/b/nmos-sqrt-id-vgs.pdf]]
    b. PMOS
-      a. $\mu_{p}C_{OX} = 294 \mu{}AV^{-2}$
+      a. $\mu_{p}C_{OX}$
          #+CAPTION: PMOS \mu_{p}C_{OX}-V_{GS}
          #+NAME: fig:pmos-ucox-vgs
          #+ATTR_LATEX: :placement [H]
@@ -557,6 +557,23 @@ a. Small-signal Model
    #+ATTR_LATEX: :placement [H]
    [[file:img/q6/a/small-signal-model.pdf]]
 b. $\lambda = 0 V^{-1}$
+   a. $A_{V} = \frac{v_{out}}{v_{in}}$
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      (g_{m1}v_{in} + g_{m2} v_{out}) &= 0 \\
+      A_{V} = \frac{v_{out}}{v_{in}} &= -\frac{g_{m1}}{g_{m2}} \\
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+   b. $R_{out}$
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      R_{out} &= \frac{1}{g_{m2}}
+      \end{aligned}
+      \end{equation*}
+      #+end_export
 c. $\lambda \neq 0 V^{-1}$
    a. $A_{V} = \frac{v_{out}}{v_{in}}$
       #+begin_export latex
@@ -578,3 +595,72 @@ c. $\lambda \neq 0 V^{-1}$
       \end{equation*}
       #+end_export
 * Problem 7
+a. V_{out}-V_{in} relation when:
+   a. M_{1} and M_{2} under subthreshold contditions
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      V_{TH1} &= 0.44 V \\
+      V_{TH2} &= -0.42 V \\
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+   b. M_{1} and M_{2} at saturation
+   c. M_{1} at triode and M_{2} at saturation
+b.
+c. Maximum small-signal gain
+   For maximum small-signal gain:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{align}
+   max(|A_{V}|) &= max(|\frac{\partial{V_{out}}}{\partial{V_{in}}}|) \\
+   \\
+   V_{in} &\approx 0.69 V
+   \end{align}
+   \end{equation*}
+   #+end_export
+   #+begin_src python :results file :exports results
+      from pandas import read_csv
+      import matplotlib.pyplot as plt
+      import numpy as np
+
+      # Import graph format
+      try:
+          plt.style.use("../../../../graph-formats/myGraphs1.mplstyle")
+      except:
+          pass
+
+      # Read data
+      df = read_csv("data/q7/c/cir1-d-vout.txt", delimiter = "\t")
+
+      # Min value
+      argmin = np.argmin(df.iloc[:, 1].to_numpy())
+
+      # Plot
+      plt.plot(df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy())
+      plt.scatter(df.iloc[:,0].to_numpy()[argmin], df.iloc[:,1].to_numpy()[argmin], c = "r", marker = "x")
+      plt.annotate("{0:.2f} V".format(df.iloc[:,0].to_numpy()[argmin]), (df.iloc[:,0].to_numpy()[argmin], df.iloc[:,1].to_numpy()[argmin]+0.05))
+
+      # Label
+      plt.xlabel("$V_{in}$")
+      plt.ylabel("$A_{v}$")
+
+      # Range
+      xlimit = (0, 1.8)
+      # ylimit = (0, 0.2)
+      plt.xlim(xlimit)
+      # plt.ylim(ylimit)
+
+      # Grid
+      plt.minorticks_on()
+      plt.grid()
+
+      fname = "img/q7/c/cir1-d-vout.pdf"
+      plt.savefig(fname)
+      return fname
+   #+end_src
+
+   #+RESULTS:
+   [[file:img/q7/c/cir1-d-vout.pdf]]
+d.
+e.
