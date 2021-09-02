@@ -1,4 +1,4 @@
-% Created 2021-09-02 Thu 11:17
+% Created 2021-09-02 Thu 13:47
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:orgc6f0d82}
+\label{sec:org6787862}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org856d4c1}
+\label{sec:org867991b}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:orga63fe4a}
+\label{sec:org3e1dd96}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -188,11 +188,11 @@ W_{3} &= 2.31 \mu{}m
 \includegraphics[width=300px]{img/q3/a/pmos-testbench.pdf}
 \caption{\label{fig:pmos-testbench}PMOS Testbench}
 \end{figure}
-\item I\textsubscript{S}-V\textsubscript{GD}
+\item I\textsubscript{S}-V\textsubscript{GS}
 \begin{figure}[H]
 \centering
-\includegraphics[width=.9\linewidth]{img/q3/a/pmos-is-vgd.pdf}
-\caption{\label{fig:pmos-is-vgd}PMOS I\textsubscript{S}-V\textsubscript{GD}}
+\includegraphics[width=.9\linewidth]{img/q3/a/pmos-is-vgs.pdf}
+\caption{\label{fig:pmos-is-vgs}PMOS I\textsubscript{S}-V\textsubscript{GS}}
 \end{figure}
 \end{enumerate}
 \end{enumerate}
@@ -253,21 +253,21 @@ In the case for PMOS, the relation becomes:
 \item \(\mu_{p}C_{OX} = 294 \mu{}AV^{-2}\)
 \begin{figure}[H]
 \centering
-\includegraphics[width=.9\linewidth]{img/q3/b/pmos-ucox-vgd.pdf}
-\caption{\label{fig:pmos-ucox-vgd}PMOS \(\mu\)\textsubscript{p}C\textsubscript{OX}-V\textsubscript{GD}}
+\includegraphics[width=.9\linewidth]{img/q3/b/pmos-ucox-vgs.pdf}
+\caption{\label{fig:pmos-ucox-vgs}PMOS \(\mu\)\textsubscript{p}C\textsubscript{OX}-V\textsubscript{GS}}
 \end{figure}
-\item \(V_{THp} = 1.8V - 1.38V = 0.42V\)
+\item \(V_{THp} = -0.42V\)
 \begin{figure}[H]
 \centering
-\includegraphics[width=.9\linewidth]{img/q3/b/pmos-sqrt-is-vgd.pdf}
-\caption{\label{fig:nmos-sqrt-is-vgd}PMOS \(\sqrt{I_{S}}-V_{GD}\)}
+\includegraphics[width=.9\linewidth]{img/q3/b/pmos-sqrt-is-vgs.pdf}
+\caption{\label{fig:nmos-sqrt-is-vgs}PMOS \(\sqrt{I_{S}}-V_{GS}\)}
 \end{figure}
 \end{enumerate}
 \end{enumerate}
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org2a410e0}
+\label{sec:org21134c2}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -289,7 +289,17 @@ In the case for PMOS, the relation becomes:
 \item PMOS
 \begin{enumerate}
 \item Testbench
-\item I\textsubscript{D}-V\textsubscript{DS} characteristics
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/q4/a/pmos-testbench.pdf}
+\caption{\label{fig:pmos-testbench-2}PMOS Testbench}
+\end{figure}
+\item I\textsubscript{S}-V\textsubscript{DS} characteristics
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q4/a/pmos-is-vds.pdf}
+\caption{\label{fig:nmos-id-vds}PMOS I\textsubscript{S}-V\textsubscript{DS}}
+\end{figure}
 \end{enumerate}
 \end{enumerate}
 \item \(\lambda_{n(p)}\)
@@ -328,18 +338,22 @@ In the case of PMOS:
 \begin{figure}[H]
 \centering
 \includegraphics[width=350px]{img/q4/b/nmos-d-id-id.pdf}
-\caption{\label{fig:nmos-testbench-2}NMOS Testbench}
+\caption{\label{fig:nmos-d-id-id}NMOS \(\lambda_{n}-V_{DS}\)}
 \end{figure}
 
-\item \(\lambda_{p}\)
+\item \(\lambda_{p} = - 0.022 V^{-1}\)
+\begin{figure}[H]
+\centering
+\includegraphics[width=350px]{img/q4/b/pmos-d-is-is.pdf}
+\caption{\label{fig:nmos-d-is-is}PMOS \(\lambda_{p}-V_{DS}\)}
+\end{figure}
 \end{enumerate}
 \end{enumerate}
-
 \section{Problem 5}
-\label{sec:orgeceb941}
+\label{sec:org8169f03}
 
 \section{Problem 6}
-\label{sec:orgc20ff4a}
+\label{sec:org617ede8}
 \begin{enumerate}
 \item Small-signal Model
 \begin{figure}[H]
@@ -368,5 +382,5 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:org49ca487}
+\label{sec:orged80840}
 \end{document}

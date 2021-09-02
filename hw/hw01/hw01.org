@@ -342,7 +342,16 @@ a. Testbench and I_{D}-V_{DS} characteristics of NMOS and PMOS
          [[file:img/q4/a/nmos-id-vds.pdf]]
    b. PMOS
       1. Testbench
-      2. I_{D}-V_{DS} characteristics
+         #+CAPTION: PMOS Testbench
+         #+NAME: fig:pmos-testbench-2
+         #+attr_latex: :width 300px
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q4/a/pmos-testbench.pdf]]
+      2. I_{S}-V_{DS} characteristics
+         #+CAPTION: PMOS I_{S}-V_{DS}
+         #+NAME: fig:nmos-id-vds
+         #+ATTR_LATEX: :placement [H]
+         [[file:img/q4/a/pmos-is-vds.pdf]]
 b. $\lambda_{n(p)}$
 
    Drain current characteristics for NMOS under saturation conditions:
@@ -383,8 +392,8 @@ b. $\lambda_{n(p)}$
    #+end_export
 
    a. $\lambda_{n} = 0.18 V^{-1}$
-      #+CAPTION: NMOS Testbench
-      #+NAME: fig:nmos-testbench-2
+      #+CAPTION: NMOS $\lambda_{n}-V_{DS}$
+      #+NAME: fig:nmos-d-id-id
       #+attr_latex: :width 350px
       #+ATTR_LATEX: :placement [H]
       [[file:img/q4/b/nmos-d-id-id.pdf]]
@@ -432,7 +441,54 @@ b. $\lambda_{n(p)}$
       #+RESULTS:
       [[file:img/q4/b/nmos-d-id-id.svg]]
 
-   b. $\lambda_{p}$
+   b. $\lambda_{p} = - 0.022 V^{-1}$
+      #+CAPTION: PMOS $\lambda_{p}-V_{DS}$
+      #+NAME: fig:nmos-d-is-is
+      #+attr_latex: :width 350px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q4/b/pmos-d-is-is.pdf]]
+      #+begin_src python :results file :exports none
+      from pandas import read_csv
+      import matplotlib.pyplot as plt
+      import numpy as np
+
+      # Import graph format
+      try:
+          plt.style.use("../../../../graph-formats/myGraphs1.mplstyle")
+      except:
+          pass
+
+      # Read data
+      df = read_csv("data/q4/b/pmos-d-is-is.txt", delimiter = "\t")
+
+      # Max value
+      argmax = np.argmax(df.iloc[:, 1].to_numpy())
+
+      # Plot
+      plt.plot(df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy())
+      plt.scatter(df.iloc[:,0].to_numpy()[argmax], df.iloc[:,1].to_numpy()[argmax], c = "r", marker = "x")
+
+      # Label
+      plt.xlabel("$V_{DS}$")
+      plt.ylabel("$\lambda_{p}$")
+
+      # Range
+      xlimit = (-1.8, 0)
+      ylimit = (-0.2, 0)
+      plt.ylim(ylimit)
+      plt.xlim(xlimit)
+
+      # Grid
+      plt.minorticks_on()
+      plt.grid()
+
+      fname = "img/q4/b/pmos-d-is-is.svg"
+      plt.savefig(fname)
+      return fname
+      #+end_src
+
+      #+RESULTS:
+      [[file:img/q4/b/pmos-d-is-is.svg]]
 
 * Problem 5
 
