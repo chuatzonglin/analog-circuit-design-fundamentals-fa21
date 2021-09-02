@@ -3,13 +3,13 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("geometry" "a4paper" "left=0.5in" "right=0.5in" "top=0.5in" "bottom=1in")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -31,9 +31,9 @@
     "geometry"
     "float")
    (LaTeX-add-labels
-    "sec:orgaea26fb"
-    "sec:orgeded328"
-    "sec:org9375af8"
+    "sec:orgc6f0d82"
+    "sec:org856d4c1"
+    "sec:orga63fe4a"
     "fig:nmos-testbench"
     "fig:nmos-id-vgs"
     "fig:pmos-testbench"
@@ -42,12 +42,12 @@
     "fig:nmos-sqrt-id-vgs"
     "fig:pmos-ucox-vgd"
     "fig:nmos-sqrt-is-vgd"
-    "sec:org6338f52"
+    "sec:org2a410e0"
     "fig:nmos-testbench-2"
     "fig:nmos-id-vds"
-    "sec:org83713d3"
-    "sec:org1053f6e"
+    "sec:orgeceb941"
+    "sec:orgc20ff4a"
     "fig:small-signal-model"
-    "sec:org3054950"))
+    "sec:org49ca487"))
  :latex)
 
