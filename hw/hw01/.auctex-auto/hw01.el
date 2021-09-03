@@ -31,9 +31,10 @@
     "geometry"
     "float")
    (LaTeX-add-labels
-    "sec:org1566dd9"
-    "sec:org0124d81"
-    "sec:org0c9c0e7"
+    "sec:orgeba989f"
+    "sec:org525f746"
+    "sec:orgcbbcba2"
+    "sec:org92ebece"
     "fig:nmos-testbench"
     "fig:nmos-id-vgs"
     "fig:pmos-testbench"
@@ -42,17 +43,22 @@
     "fig:nmos-sqrt-id-vgs"
     "fig:pmos-ucox-vgs"
     "fig:nmos-sqrt-is-vgs"
-    "sec:org2ebaa55"
+    "sec:orgbbcf066"
     "fig:nmos-testbench-2"
     "fig:nmos-id-vds"
     "fig:pmos-testbench-2"
     "fig:nmos-d-id-id"
     "fig:nmos-d-is-is"
-    "sec:org13acd5e"
+    "sec:orgbdcb894"
     "fig:nmos-d-id-id-vgs"
     "fig:pmos-d-is-is-vgs"
-    "sec:orgf432feb"
+    "sec:org704eaea"
     "fig:small-signal-model"
-    "sec:org984d18d"))
+    "sec:org6e7a368"
+    "fig:cir1-vout-cal"
+    "fig:cir1-vout-sim-cal"
+    "fig:cir1-dvout"
+    "fig:cir1-gain"
+    "fig:cir1-rout"))
  :latex)
 
