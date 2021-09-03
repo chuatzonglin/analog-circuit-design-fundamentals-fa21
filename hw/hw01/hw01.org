@@ -748,6 +748,9 @@ a. V_{out}-V_{in} relation when:
    return fname
    #+end_src
 
+   #+CAPTION: Calculated $V_{out}-V_{in}$
+   #+NAME: fig:cir1-vout-cal
+   #+ATTR_LATEX: :placement [H]
    #+RESULTS:
    [[file:img/q7/a/cir1-vout-cal.pdf]]
 
@@ -807,13 +810,16 @@ b. Simulated V_{out}-V_{in} relation using LTSpice
    # Legend
    plt.legend()
 
-   fname = "img/q7/a/cir1-vout-cal.pdf"
+   fname = "img/q7/a/cir1-vout-sim-cal.pdf"
    plt.savefig(fname)
    return fname
    #+end_src
 
+   #+CAPTION: Simulated and calculated $V_{out}-V_{in}$
+   #+NAME: fig:cir1-vout-sim-cal
+   #+ATTR_LATEX: :placement [H]
    #+RESULTS:
-   [[file:img/q7/a/cir1-vout-cal.pdf]]
+   [[file:img/q7/a/cir1-vout-sim-cal.pdf]]
 
 c. Maximum small-signal gain
    For maximum small-signal gain:
@@ -854,9 +860,9 @@ c. Maximum small-signal gain
 
       # Range
       xlimit = (0, 1.8)
-      # ylimit = (0, 0.2)
+      ylimit = (-1.2, 0)
       plt.xlim(xlimit)
-      # plt.ylim(ylimit)
+      plt.ylim(ylimit)
 
       # Grid
       plt.minorticks_on()
@@ -867,7 +873,56 @@ c. Maximum small-signal gain
       return fname
    #+end_src
 
+   #+CAPTION:$A_{v}-V_{in}$
+   #+NAME: fig:cir1-dvout
+   #+ATTR_LATEX: :placement [H]
    #+RESULTS:
    [[file:img/q7/c/cir1-d-vout.pdf]]
-d.
-e.
+d. Small signal parameters:
+   a. $|A_{v}| = 787.83mdB = 1.09$
+      #+CAPTION:$A_{v}$ at $V_{in} = 0.69V$
+      #+NAME: fig:cir1-gain
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q7/d/cir1-gain.pdf]]
+
+   b. $R_{out} = 4.73k\Omega$
+      #+CAPTION:$R_{out}$ at $V_{in} = 0.69V$
+      #+NAME: fig:cir1-rout
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q7/d/cir1-rout.pdf]]
+
+e. g_{m} and g_{ds}
+   a. From 7(d),
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      A_{V} &=  1.09 \\
+      R_{out} & = 4.73k\Omega \\
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+   b. From 6(c),
+
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      g_{m_{1}} &= 2.32e-04 \Omega^{-1} \\
+      g_{m_{2}} &= 2.09e-04 \Omega^{-1} \\
+      g_{DS_{1}} &= \frac{1}{r_{o_{1}}} = 8.66e-07 \Omega^{-1} \\
+      g_{DS_{2}} &= \frac{1}{r_{o_{2}}} = 1.28e-06 \Omega^{-1} \\
+      \\
+      A_{V} = \frac{v_{out}}{v_{in}} &= -\frac{g_{m1}}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}} \\
+      &\approx 1.10
+      \\
+      R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}} \\
+      R_{out} & = 4.74k\Omega \\
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+      #+begin_src python :exports none
+      # return 2.32e-04/(2.09e-04 + 8.66e-07 + 1.28e-06)
+      return 1/(2.09e-04 + 8.66e-07 + 1.28e-06)
+      #+end_src
+
+      #+RESULTS:
+      : 4736.059409129228

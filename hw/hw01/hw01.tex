@@ -1,4 +1,4 @@
-% Created 2021-09-03 Fri 08:36
+% Created 2021-09-03 Fri 09:02
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org07cf3ba}
+\label{sec:org1566dd9}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orge151912}
+\label{sec:org0124d81}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org9bc9f36}
+\label{sec:org0c9c0e7}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -269,7 +269,7 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org5ccf270}
+\label{sec:org2ebaa55}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -352,7 +352,7 @@ In the case of PMOS:
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:org674837c}
+\label{sec:org13acd5e}
 g\textsubscript{m} for NMOS is approximately:
 \begin{equation*}
 \begin{align}
@@ -414,7 +414,7 @@ n &= 1.21 \\
 \end{enumerate}
 
 \section{Problem 6}
-\label{sec:org273d1f9}
+\label{sec:orgf432feb}
 \begin{enumerate}
 \item Small-signal Model
 \begin{figure}[H]
@@ -458,7 +458,7 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:orgfdd34d0}
+\label{sec:org984d18d}
 \begin{enumerate}
 \item V\textsubscript{out}-V\textsubscript{in} relation when:
 \begin{enumerate}
@@ -521,7 +521,7 @@ I_{D_{1}} &= I_{D_{2}} \\
 \mu_{n}C_{OX_{n}}\frac{W_{n}}{L_{n}}[(V_{GS_{1}} - V_{TH_{n}})V_{DS} - \frac{V_{DS}^2}{2}] &=
 \frac{\mu_{p}C_{OX_{p}}}{2}\frac{W_{p}}{L_{p}}(V_{SG_{2}} + V_{TH_{p}})^{2} \\
 2.50[(V_{in} - 0.44V)V_{out} - \frac{V_{out}^2}{2}] &= (V_{DD} - V_{out} - 0.42V)^{2} \\
-V_{out} = \frac{-(2.5V_{in} + 1.66) + \sqrt{(2.5V_{in} + 1.66)^{2} +11.47}}{3}
+V_{out} = \frac{(2.5V_{in} + 1.66) - \sqrt{(2.5V_{in} + 1.66)^{2} - 17.1}}{4.5}
 \end{aligned}
 \end{equation*}
 Condition:
@@ -536,7 +536,11 @@ V_{in} > 1.09V \\
 \includegraphics[width=.9\linewidth]{img/q7/a/cir1-vout-cal.pdf}
 \end{center}
 
-\item Simulated V\textsubscript{out}-V\textsubscript{in} relation
+\item Simulated V\textsubscript{out}-V\textsubscript{in} relation using LTSpice
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{img/q7/a/cir1-vout-cal.pdf}
+\end{center}
 
 \item Maximum small-signal gain
 For maximum small-signal gain:

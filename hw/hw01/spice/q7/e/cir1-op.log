@@ -1,0 +1,71 @@
+Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\hw\hw01\spice\q7\e\cir1-op.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m2          m1
+Model:      pch.2       nch.5
+Id:       -2.94e-05    2.94e-05
+Vgs:      -7.00e-01    6.90e-01
+Vds:      -7.00e-01    1.10e+00
+Vbs:       0.00e+00    0.00e+00
+Vth:      -4.57e-01    4.82e-01
+Vdsat:    -2.28e-01    2.34e-01
+Gm:        2.09e-04    2.32e-04
+Gds:       1.28e-06    8.66e-07
+Gmb        6.93e-05    6.67e-05
+Cbd:       0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00
+Cgsov:     4.91e-15    1.09e-15
+Cgdov:     4.91e-15    1.09e-15
+Cgbov:     2.73e-16    1.81e-16
+dQgdVgb:   1.04e-13    1.97e-14
+dQgdVdb:  -4.94e-15   -1.09e-15
+dQgdVsb:  -9.39e-14   -1.67e-14
+dQddVgb:  -5.10e-15   -1.10e-15
+dQddVdb:   5.01e-15    1.10e-15
+dQddVsb:   1.51e-16    1.17e-17
+dQbdVgb:  -1.52e-14   -2.07e-15
+dQbdVdb:  -2.15e-17    1.93e-19
+dQbdVsb:  -1.48e-14   -4.16e-15
+
+
+
+Date: Fri Sep 03 12:13:15 2021
+Total elapsed time: 0.151 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 6
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1:       7 opcodes
+Matrix Compiler2: 301 bytes object code size
