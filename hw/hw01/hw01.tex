@@ -1,4 +1,4 @@
-% Created 2021-09-02 Thu 14:35
+% Created 2021-09-03 Fri 08:36
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,7 +37,7 @@
 
 
 \section{Problem 1}
-\label{sec:org989f2db}
+\label{sec:org07cf3ba}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -75,7 +75,7 @@ L &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{I_{D}}(V_{GS} - V_{TH})^{2}(1 + \lambda{}V_
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org2a258f8}
+\label{sec:orge151912}
 \begin{enumerate}
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
@@ -161,7 +161,7 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org13eea06}
+\label{sec:org9bc9f36}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -211,7 +211,7 @@ V\textsubscript{THn} is the x-axis intercept when the saturation region is extra
 In the case of PMOS, the relation becomes:
 \begin{equation*}
 \begin{aligned}
-\sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} - V_{THp} \\
+\sqrt{\frac{2 I_{S}}{\mu_{p}C_{ox}}\frac{L}{W}} &=  V_{SG} + V_{THp} \\
 \end{aligned}
 \end{equation*}
 For deriving \(\mu_{n}C_{OX}\), since V\textsubscript{THn(p)} is constant at specific temperatures.
@@ -235,7 +235,8 @@ In the case for PMOS, the relation becomes:
 \begin{enumerate}
 \item NMOS
 \begin{enumerate}
-\item \(\mu_{n}C_{OX} = 306 \mu{}AV^{-2}\)
+\item \(\mu_{n}C_{OX}\)
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\linewidth]{img/q3/b/nmos-ucox-vgs.pdf}
@@ -250,7 +251,8 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 \item PMOS
 \begin{enumerate}
-\item \(\mu_{p}C_{OX} = 294 \mu{}AV^{-2}\)
+\item \(\mu_{p}C_{OX}\)
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\linewidth]{img/q3/b/pmos-ucox-vgs.pdf}
@@ -267,7 +269,7 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org1c04e9f}
+\label{sec:org5ccf270}
 \begin{enumerate}
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
 \begin{enumerate}
@@ -350,7 +352,7 @@ In the case of PMOS:
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:orgb63a527}
+\label{sec:org674837c}
 g\textsubscript{m} for NMOS is approximately:
 \begin{equation*}
 \begin{align}
@@ -393,7 +395,7 @@ g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
 \item NMOS
 \begin{equation*}
 \begin{aligned}
-max(\frac{g_{m}}{I_{D}}) &= 30.4 V^{-1}\\\\
+max(|\frac{g_{m}}{I_{D}}|) &= 30.4 V^{-1}\\\\
 \frac{1}{nV_{t}} &= 30.4 V^{-1}\\
 n &= \frac{1}{0.026 \times 30.4}\\
 n &= 1.27 \\
@@ -402,7 +404,7 @@ n &= 1.27 \\
 \item PMOS
 \begin{equation*}
 \begin{aligned}
-max(\frac{g_{m}}{I_{S}}) &= 31.7 V^{-1}\\\\
+max(|\frac{g_{m}}{I_{S}}|) &= 31.7 V^{-1}\\\\
 \frac{1}{nV_{t}} &= 31.7 V^{-1}\\
 n &= \frac{1}{0.026 \times 31.7}\\
 n &= 1.21 \\
@@ -412,7 +414,7 @@ n &= 1.21 \\
 \end{enumerate}
 
 \section{Problem 6}
-\label{sec:orgc132bdc}
+\label{sec:org273d1f9}
 \begin{enumerate}
 \item Small-signal Model
 \begin{figure}[H]
@@ -421,6 +423,21 @@ n &= 1.21 \\
 \caption{\label{fig:small-signal-model}Small signal model}
 \end{figure}
 \item \(\lambda = 0 V^{-1}\)
+\begin{enumerate}
+\item \(A_{V} = \frac{v_{out}}{v_{in}}\)
+\begin{equation*}
+\begin{aligned}
+(g_{m1}v_{in} + g_{m2} v_{out}) &= 0 \\
+A_{V} = \frac{v_{out}}{v_{in}} &= -\frac{g_{m1}}{g_{m2}} \\
+\end{aligned}
+\end{equation*}
+\item \(R_{out}\)
+\begin{equation*}
+\begin{aligned}
+R_{out} &= \frac{1}{g_{m2}}
+\end{aligned}
+\end{equation*}
+\end{enumerate}
 \item \(\lambda \neq 0 V^{-1}\)
 \begin{enumerate}
 \item \(A_{V} = \frac{v_{out}}{v_{in}}\)
@@ -441,5 +458,100 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:orge8d3565}
+\label{sec:orgfdd34d0}
+\begin{enumerate}
+\item V\textsubscript{out}-V\textsubscript{in} relation when:
+\begin{enumerate}
+\item M\textsubscript{1} and M\textsubscript{2} under subthreshold conditions
+\begin{equation*}
+\begin{aligned}
+V_{TH_{n}} &= 0.44 V \\
+V_{TH_{p}} &= -0.42 V \\
+\\
+\mu_{n}C_{OX_{n}} &= 306 \mu{}AV^{-2} \\
+\mu_{p}C_{OX_{p}} &= 49 \mu{}AV^{-2} \\
+\\
+n_{n} &= 1.27 \\
+n_{p} &= 1.21 \\
+\\
+I_{D_{1}} &= I_{D_{2}} \\
+(\mu_{n}C_{OX_{n}}(n - 1)\frac{W_{n}}{L_{n}}V_{T}^{2}) e^{\frac{V_{in} - V_{TH_{n}}}{n_{n}V_{T}}} &=
+(\mu_{p}C_{OX_{p}}(n - 1)\frac{W_{p}}{L_{p}}V_{T}^{2}) e^{\frac{V_{DD} - V_{out} + V_{TH_{p}}}{n_{p}V_{T}}} \\
+247 e^{\frac{V_{in} - 0.44}{0.033}} &= 154 e^{\frac{1.8 - V_{out} - 0.42}{0.031}} \\
+ln(1.6) + \frac{V_{in} - 0.44}{0.033} &= \frac{1.38 - V_{out}}{0.031} \\
+0.015 + V_{in} - 0.44 &\approx 1.38 - V_{out} \\
+V_{out} &\approx 1.8V - V_{in} \\
+\\
+V_{in} &< 0.44 V
+\end{aligned}
+\end{equation*}
+
+\item M\textsubscript{1} and M\textsubscript{2} at saturation
+\begin{equation*}
+\begin{aligned}
+I_{D_{1}} &= I_{D_{2}} \\
+\frac{\mu_{n}C_{OX_{n}}}{2}\frac{W_{n}}{L_{n}}(V_{GS_{1}} - V_{TH_{n}})^{2} &=
+\frac{\mu_{p}C_{OX_{p}}}{2}\frac{W_{p}}{L_{p}}(V_{SG_{2}} + V_{TH_{p}})^{2} \\
+918(V_{in} - 0.44)^{2} &= 735(1.8 - V_{out} - 0.42)^{2} \\
+1.12(V_{in} - 0.44) &= 1.38 - V_{out} \\
+V_{out} &= 1.87V - 1.12V_{in} \\
+\end{aligned}
+\end{equation*}
+Saturation conditions for M\textsubscript{1}:
+\begin{equation*}
+\begin{aligned}
+V_{GS_{1}} - V_{TH_{1}} &< V_{DS} \\
+V_{in} - 0.44V &< V_{out} \\
+V_{in} - 0.44V &< 1.87V - 1.12V_{in} \\
+2.12V_{in} &< 2.31V \\
+V_{in} &< 1.09V \\
+\end{aligned}
+\end{equation*}
+Condition for M\textsubscript{1} and M\textsubscript{2} at saturation:
+\begin{equation*}
+\begin{aligned}
+0.44V < V_{in} < 1.09V \\
+\end{aligned}
+\end{equation*}
+
+\item M\textsubscript{1} at triode and M\textsubscript{2} at saturation
+\begin{equation*}
+\begin{aligned}
+I_{D_{1}} &= I_{D_{2}} \\
+\mu_{n}C_{OX_{n}}\frac{W_{n}}{L_{n}}[(V_{GS_{1}} - V_{TH_{n}})V_{DS} - \frac{V_{DS}^2}{2}] &=
+\frac{\mu_{p}C_{OX_{p}}}{2}\frac{W_{p}}{L_{p}}(V_{SG_{2}} + V_{TH_{p}})^{2} \\
+2.50[(V_{in} - 0.44V)V_{out} - \frac{V_{out}^2}{2}] &= (V_{DD} - V_{out} - 0.42V)^{2} \\
+V_{out} = \frac{-(2.5V_{in} + 1.66) + \sqrt{(2.5V_{in} + 1.66)^{2} +11.47}}{3}
+\end{aligned}
+\end{equation*}
+Condition:
+\begin{equation*}
+\begin{aligned}
+V_{in} > 1.09V \\
+\end{aligned}
+\end{equation*}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{img/q7/a/cir1-vout-cal.pdf}
+\end{center}
+
+\item Simulated V\textsubscript{out}-V\textsubscript{in} relation
+
+\item Maximum small-signal gain
+For maximum small-signal gain:
+\begin{equation*}
+\begin{align}
+max(|A_{V}|) &= max(|\frac{\partial{V_{out}}}{\partial{V_{in}}}|) \\
+\\
+V_{in} &\approx 0.69 V
+\end{align}
+\end{equation*}
+\begin{center}
+\includegraphics[width=.9\linewidth]{img/q7/c/cir1-d-vout.pdf}
+\end{center}
+\item 
+
+\item 
+\end{enumerate}
 \end{document}
