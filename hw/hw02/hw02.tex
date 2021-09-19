@@ -1,0 +1,186 @@
+% Created 2021-09-19 Sun 15:19
+% Intended LaTeX compiler: pdflatex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+
+\usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
+\usepackage{float}
+\DeclareUnicodeCharacter{2212}{-}
+\setcounter{secnumdepth}{0}
+\author{Tzong Lin Chua}
+\date{\today}
+\title{EE4C10 Analog Circuit Design Fundamentals\\\medskip
+\large Homework Assignment II }
+\hypersetup{
+ pdfauthor={Tzong Lin Chua},
+ pdftitle={EE4C10 Analog Circuit Design Fundamentals},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Problem 1}
+\label{sec:org30ad0b8}
+\begin{enumerate}
+\item Overdrive voltage, V\textsubscript{gt}, for:
+\begin{enumerate}
+\item M1
+\begin{equation*}
+\begin{aligned}
+I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{GS_{1}} - V_{TH_{1}})^2(1 + \lambda_{1}V_{DS_{1}}) \\
+I_{D1} &\approx \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{gt_{1}})^2 \\
+V_{gt_{1}} &\approx \sqrt{\frac{2 I_{D_{1}}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} \\
+\\
+V_{gt_{1}} &\approx 109.11 mV
+\end{aligned}
+\end{equation*}
+
+\item M2
+\begin{equation*}
+\begin{aligned}
+V_{gt_{2}} &\approx \sqrt{\frac{2 I_{D_{2}}}{\mu_{p}C_{OX}}(\frac{L}{W})_{2}} \\
+\\
+V_{gt_{2}} &\approx 377.96 mV
+\end{aligned}
+\end{equation*}
+\end{enumerate}
+
+\item Small-signal gain
+
+\begin{equation*}
+\begin{aligned}
+g_{m1}V_{in} &= \frac{-V_{out}}{r_{o1}//r_{o2}} \\
+\frac{V_{out}}{V_{in}} &= -g_{m1}(r_{o1}//r_{o2}) \\
+\\
+g_{m1} &= \mu_{n}C_{OX} (\frac{W}{L})_{1} V_{gt_1} \\
+&= 4.582 mS \\
+\\
+r_{o1} &= \frac{1}{I_{D1}\lambda_{n}} \\
+&= 20 k\Omega \\
+\\
+r_{o2} &= \frac{1}{I_{D2}\lambda_{p}} \\
+&= 40 k\Omega \\
+\\
+\frac{V_{out}}{V_{in}} &\approx -61.09 \\
+\end{aligned}
+\end{equation*}
+
+\item V\textsubscript{out} output swing
+
+For M\textsubscript{1} to be in saturation,
+\begin{equation*}
+\begin{aligned}
+V_{DS1} &\geq V_{gt1}\\
+V_{out} &\geq 0.109 V
+\end{aligned}
+\end{equation*}
+
+For M\textsubscript{2} to be in saturation,
+\begin{equation*}
+\begin{aligned}
+V_{DS2} &\geq V_{gt2} \\
+V_{DD} - V_{out} &\geq 0.377 V \\
+V_{out} &\leq 3.3 V - 0.377 V \\
+V_{out} &\leq 2.923 V \\
+\end{aligned}
+\end{equation*}
+
+Swing of V\textsubscript{out},
+\begin{equation*}
+\begin{aligned}
+0.109 V &< V_{out} < 2.923 V \\
+\\
+V_{out, pp} &= 2.923 V - 0.109 V \\
+&= 2.814 V
+\end{aligned}
+\end{equation*}
+
+\item 
+\end{enumerate}
+
+\section{Problem 2}
+\label{sec:orgd74c234}
+\begin{enumerate}
+\item For M1 to be 100mV from triode,
+\begin{equation*}
+\begin{aligned}
+V_{DS1} &= V_{GS1} - V_{TH,N} + 100mV \\
+X &= V_{in} - V_{TH,N} + 100mV \\
+\end{aligned}
+\end{equation*}
+V\textsubscript{in} for M1 to be in saturation with I\textsubscript{D1} of 0.35 mA,
+\begin{equation*}
+\begin{aligned}
+I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{GS1} - V_{TH,N})^2 \\
+I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{in} - V_{TH,N})^2 \\
+V_{in} &= \sqrt{\frac{2I_{D1}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} + V_{TH,N} \\
+\\
+X &= \sqrt{\frac{2I_{D1}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} + 100mV \\
+&\approx 0.253 V
+\end{aligned}
+\end{equation*}
+V\textsubscript{b} for M2 to be in saturation with I\textsubscript{D2} of 0.35 mA,
+\begin{equation*}
+\begin{aligned}
+I_{D2} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{2}(V_{GS2} - V_{TH,N})^2 \\
+I_{D2} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{2}(V_{b} - X - V_{TH,N})^2 \\
+V_{b} &= \sqrt{\frac{2I_{D2}}{\mu_{n}C_{OX}}(\frac{L}{W})_{2}} + X + V_{TH,N} \\
+&\approx 0.906 V
+
+\end{aligned}
+\end{equation*}
+
+\item Small-signal gain
+
+\begin{equation*}
+\begin{aligned}
+G_{m} = \frac{-g_{m1}}{1 + \frac{r_{o2}}{r_{o1}}} \\
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+R_{out} &= (r_{o1} + r_{o2}) // R_{d} \\
+\end{aligned}
+\end{equation*}
+
+Small-signal gain,
+\begin{equation*}
+\begin{aligned}
+\frac{V_{out}}{V_{in}} &= G_{m}R_{out} \\
+&= \frac{-g_{m1}r_{o1}R_{d}}{r_{o1}+r_{o2}+R_{d}} \\
+\\
+g_{m1} &= \mu_{n}C_{OX} (\frac{W}{L})_{1} (V_{GS1} - V_{TH,N})(1 + \lambda_{n}V_{DS1}) \\
+&= \mu_{n}C_{OX} (\frac{W}{L})_{1} (V_{in} - V_{TH,N})(1 + \lambda_{n}}X) \\
+&= 4.698 mS \\
+\\
+r_{o1} &= \frac{1}{I_{D1}\lambda_{n}} \\
+&= 28.571 k\Omega \\
+\\
+r_{o2} &= \frac{1}{I_{D2}\lambda_{p}} \\
+&= 28.571 k\Omega \\
+\\
+\frac{V_{out}}{V_{in}} &\approx -10.90 \\
+\\
+\end{aligned}
+\end{equation*}
+
+\item Maximum output swing,
+\end{enumerate}
+\end{document}

@@ -16,7 +16,6 @@
 #+STARTUP: overview
 
 * Problem 1
-#+ATTR_LATEX: :options [(a)]
 a) Overdrive voltage, V_{gt}, for:
    1. M1
       #+begin_export latex
@@ -139,7 +138,201 @@ c) V_{out} output swing
 
 d)
 
-
-
-
 * Problem 2
+a) For M1 to be 100mV from triode,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{DS1} &= V_{GS1} - V_{TH,N} + 100mV \\
+   X &= V_{in} - V_{TH,N} + 100mV \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   V_{in} for M1 to be in saturation with I_{D1} of 0.35 mA,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{GS1} - V_{TH,N})^2 \\
+   I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{in} - V_{TH,N})^2 \\
+   V_{in} &= \sqrt{\frac{2I_{D1}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} + V_{TH,N} \\
+   &= 0.653 V \\
+   \\
+   X &= \sqrt{\frac{2I_{D1}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} + 100mV \\
+   &\approx 0.253 V
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   V_{b} for M2 to be in saturation with I_{D2} of 0.35 mA,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{D2} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{2}(V_{GS2} - V_{TH,N})^2 \\
+   I_{D2} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{2}(V_{b} - X - V_{TH,N})^2 \\
+   V_{b} &= \sqrt{\frac{2I_{D2}}{\mu_{n}C_{OX}}(\frac{L}{W})_{2}} + X + V_{TH,N} \\
+   &\approx 0.906 V
+
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   i = 0.35e-3
+   u_nC_ox = 300e-6
+   lambda_n = 0.1
+
+   WL_1 = 36/0.36
+   WL_2 = 18/0.18
+
+   X = 0.2527525231651947
+
+   return np.sqrt(2*i/(u_nC_ox*WL_2)) + X + 0.5
+   #+end_src
+
+   #+RESULTS:
+   : 0.9055050463303893
+
+b) Small-signal gain
+
+   #+begin_comment
+   Small-signal model
+   [[file:img\small-signal-model-q2.pdf]]
+   #+end_comment
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   G_{m} &= \frac{g_{m1}(g_{m2}r_{o1}r_{o2} + r_{o1})}{g_{m2}r_{o1}r_{o2} + r_{o1} + r_{o2}} \\
+   &\approx g_{m1}
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   R_{out} &= (g_{m2}r_{o1}r_{o2} + r_{o1} + r_{o2}) // R_{d} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   Small-signal gain,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{V_{out}}{V_{in}} &= -G_{m}R_{out} \\
+   &= -g_{m1}[(g_{m2}r_{o1}r_{o2} + r_{o1} + r_{o2}) // R_{d}] \\
+   \\
+   g_{m1} &= \mu_{n}C_{OX} (\frac{W}{L})_{1} (V_{GS1} - V_{TH,N}) \\
+   &= \mu_{n}C_{OX} (\frac{W}{L})_{1} (V_{in} - V_{TH,N}) \\
+   &= 4.583 mS \\
+   \\
+   g_{m2} &= \mu_{n}C_{OX} (\frac{W}{L})_{2} (V_{GS2} - V_{TH,N}) \\
+   &\approx \mu_{n}C_{OX} (\frac{W}{L})_{2} (V_{b} - X - V_{TH,N}) \\
+   &= 4.583 mS \\
+   \\
+   r_{o1} &= \frac{1}{I_{D1}\lambda_{n}} \\
+   &= 28.571 k\Omega \\
+   \\
+   r_{o2} &= \frac{1}{I_{D2}\lambda_{p}} \\
+   &= 28.571 k\Omega \\
+   \\
+   \frac{V_{out}}{V_{in}} &\approx -22.88 \\
+   \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   i = 0.35e-3
+   u_nC_ox = 300e-6
+   lambda_n = 0.1
+
+   WL_1 = 36/0.36
+   WL_2 = 18/0.18
+
+   X = 0.2527525231651947
+   vin = 0.6527525231651947
+   vb = 0.9055050463303893
+
+   return u_nC_ox*WL_1*(vin - 0.5)
+   #+end_src
+
+   #+RESULTS:
+   : 0.004582575694955841
+
+   #+begin_src python :exports none
+   import numpy as np
+   ro = 28.571e3
+   gm = 0.004582575694955841
+   Rd = 5e3
+   return gm*Rd*(gm*ro*ro + ro + ro)/(Rd + gm*ro*ro + ro + ro)
+   #+end_src
+
+   #+RESULTS:
+   : 22.882753003533924
+
+c) Assume V_{b} to be 1.65V,
+   For M2 to be in saturation,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{out} - X &\geq V_{b} - X - V_{TH,N} \\
+   V_{out} &\geq 1.15 V \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   When $I_{D} \geq 0$,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{out} &\leq V_{DD} \\
+   1.15 V \leq V_{out} &\leq 3.3V \\
+   \\
+   V_{out,pp} = 2.15V
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   i = 0.35e-3
+   u_nC_ox = 300e-6
+   lambda_n = 0.1
+
+   WL_1 = 36/0.36
+   WL_2 = 18/0.18
+
+   X = 0.2527525231651947
+   vin = 0.6527525231651947
+   vb = 1.65
+
+   return vb - np.sqrt(2*i/(u_nC_ox*WL_2)) - 0.5
+   #+end_src
+
+   #+RESULTS:
+   : 0.9972474768348052
+
+d) X_{pp}
+   Gain of X,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{X}{V_{in}} &= \frac{-g_{m1}}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}} \\
+   &\approx \frac{-g_{m1}}{g_{m2}} \\
+   &\approx -1 \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{X}{V_{out}} &= \frac{X}{V_{in}}\frac{V_{in}}{V_{out}} \\
+   &= \frac{1}{22.88} \\
+   \\
+   X_{pp} = 54.63 mV\\
+
+   \end{aligned}
+   \end{equation*}
+   #+end_export
