@@ -1,0 +1,145 @@
+#+TITLE: EE4C10 Analog Circuit Design Fundamentals
+#+SUBTITLE: Homework Assignment II
+#+AUTHOR: Tzong Lin Chua
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header: \usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
+#+latex_header: \usepackage{float}
+#+latex_header_extra: \DeclareUnicodeCharacter{2212}{-}
+#+latex_header_extra: \setcounter{secnumdepth}{0}
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+#+STARTUP: overview
+
+* Problem 1
+#+ATTR_LATEX: :options [(a)]
+a) Overdrive voltage, V_{gt}, for:
+   1. M1
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      I_{D1} &= \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{GS_{1}} - V_{TH_{1}})^2(1 + \lambda_{1}V_{DS_{1}}) \\
+      I_{D1} &\approx \frac{\mu_{n}C_{OX}}{2}(\frac{W}{L})_{1}(V_{gt_{1}})^2 \\
+      V_{gt_{1}} &\approx \sqrt{\frac{2 I_{D_{1}}}{\mu_{n}C_{OX}}(\frac{L}{W})_{1}} \\
+      \\
+      V_{gt_{1}} &\approx 109.11 mV
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+
+   2. M2
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      V_{gt_{2}} &\approx \sqrt{\frac{2 I_{D_{2}}}{\mu_{p}C_{OX}}(\frac{L}{W})_{2}} \\
+      \\
+      V_{gt_{2}} &\approx 377.96 mV
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   i = 0.25e-3
+   u_nC_ox = 210e-6
+   WL_1 = 36/0.18
+
+   u_pC_ox = 70e-6
+   WL_2 = 18/0.36
+
+   return np.sqrt(2*i/(u_pC_ox*WL_2))
+   #+end_src
+
+   #+RESULTS:
+   : 0.37796447300922725
+
+b) Small-signal gain
+   #+begin_comment
+   Small signal model:
+   [[file:img/q1/b/small-signal-model.pdf]]
+   #+end_comment
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   g_{m1}V_{in} &= \frac{-V_{out}}{r_{o1}//r_{o2}} \\
+   \frac{V_{out}}{V_{in}} &= -g_{m1}(r_{o1}//r_{o2}) \\
+   \\
+   g_{m1} &= \mu_{n}C_{OX} (\frac{W}{L})_{1} V_{gt_1} \\
+   &= 4.582 mS \\
+   \\
+   r_{o1} &= \frac{1}{I_{D1}\lambda_{n}} \\
+   &= 20 k\Omega \\
+   \\
+   r_{o2} &= \frac{1}{I_{D2}\lambda_{p}} \\
+   &= 40 k\Omega \\
+   \\
+   \frac{V_{out}}{V_{in}} &\approx -61.09 \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   i = 0.25e-3
+   u_nC_ox = 210e-6
+   WL_1 = 36/0.18
+   lambda_n = 0.2
+   V_gt1 = 109.11e-3
+
+   u_pC_ox = 70e-6
+   WL_2 = 18/0.36
+   lambda_p = 0.1
+
+   return 1/(i*lambda_p)
+   #+end_src
+
+   #+RESULTS:
+   : 40000.0
+
+c) V_{out} output swing
+
+   For M_{1} to be in saturation,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{DS1} &\geq V_{gt1}\\
+   V_{out} &\geq 0.109 V
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   For M_{2} to be in saturation,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{DS2} &\geq V_{gt2} \\
+   V_{DD} - V_{out} &\geq 0.377 V \\
+   V_{out} &\leq 3.3 V - 0.377 V \\
+   V_{out} &\leq 2.923 V \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   Swing of V_{out},
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   0.109 V &< V_{out} < 2.923 V \\
+   \\
+   V_{out, pp} &= 2.923 V - 0.109 V \\
+   &= 2.814 V
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+d)
+
+
+
+
+* Problem 2
