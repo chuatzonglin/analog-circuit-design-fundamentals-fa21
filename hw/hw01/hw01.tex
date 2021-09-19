@@ -1,4 +1,4 @@
-% Created 2021-09-08 Wed 23:33
+% Created 2021-09-09 Thu 16:10
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -17,6 +17,7 @@
 
 \usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
 \usepackage{float}
+\usepackage{enumerate}
 \DeclareUnicodeCharacter{2212}{-}
 \setcounter{secnumdepth}{0}
 \author{Tzong Lin Chua}
@@ -36,8 +37,32 @@
 \tableofcontents
 
 
+\section{Simulation Files}
+\label{sec:orgf69ff5a}
+Each question with simulation files will have their respective subfolder.
+\texttt{q7} subfolder for problem 7 will have subfolders for the subquestions.
+
+The graphs used for the sub problems in problem 3 to 6 are plotted together.
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
+The folders for each question are arranged as follows after extracting:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+spice &  & \\
+ & q3 & \\
+ & q4 & \\
+ & q5 & \\
+ & q7 & \\
+ &  & b\\
+ &  & c\\
+ &  & d\\
+ &  & e\\
+\hline
+\end{tabular}
+\end{center}
 \section{Problem 1}
-\label{sec:org2869a93}
+\label{sec:org41dfd7f}
 For \(I_{D} = 40 \mu{}A\):
 \begin{equation*}
 \begin{aligned}
@@ -54,7 +79,7 @@ V_{GS} - V_{TH}&= 0.4V < V_{DS} \\
 \end{aligned}
 \end{equation*}
 
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item \(\lambda = 0 V^{-1}\)
 \begin{equation*}
 \begin{aligned}
@@ -75,8 +100,8 @@ L &= 0.41 \mu{}m
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org6bed224}
-\begin{enumerate}
+\label{sec:org6f87d65}
+\begin{enumerate}[(a)]
 \item Bulk of the transistors are connected to the source, \(V_{B} = V_{S}\)
 \begin{equation*}
 \begin{aligned}
@@ -84,7 +109,8 @@ V_{TH} &= V_{TH0} + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F
 V_{TH} &= V_{TH0} = 0.33 V \\
 \end{aligned}
 \end{equation*}
-\begin{enumerate}
+
+\begin{enumerate}[1.]
 \item Transistor M\textsubscript{1}
 \begin{equation*}
 \begin{aligned}
@@ -118,14 +144,14 @@ W_{3} &= 1.37 \mu{}m
 \end{enumerate}
 
 \item Bulk terminals are attached to the V\textsubscript{DD}, \(V_{B} = V_{DD}\).
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item Transistor M\textsubscript{1}
 \begin{equation*}
 \begin{aligned}
 V_{BS} &= 2.5 V - 2.5 V = 0 V \\
 \\
-V_{TH} &= V_{TH0} + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
-V_{TH} &= V_{TH0} = 0.33 V \\
+V_{TH} & + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} & = 0.33 V \\
 \\
 W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
 W_{1} &= 2.72 \mu{}m
@@ -137,8 +163,8 @@ W_{1} &= 2.72 \mu{}m
 \begin{aligned}
 V_{BS} &= 2.5 V - 1.7 V = 0.8 V \\
 \\
-V_{TH} &= V_{TH0} + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
-V_{TH} &= V_{TH0} = 0.43 V \\
+V_{TH} & + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} & = 0.43 V \\
 \\
 W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
 W_{2} &= 8.23 \mu{}m
@@ -150,8 +176,8 @@ W_{2} &= 8.23 \mu{}m
 \begin{aligned}
 V_{BS} &= 2.5 V - 1.0 V = 1.5 V \\
 \\
-V_{TH} &= V_{TH0} + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
-V_{TH} &= V_{TH0} = 0.49 V \\
+V_{TH} & + \gamma{}(\sqrt{|2\varphi_{F}| + V_{BS}} - \sqrt{|2\varphi_{F}|}) \\
+V_{TH} & = 0.49 V \\
 \\
 W &= \frac{2LI_{D}}{\mu_{p}C_{OX}}\frac{1}{(V_{SG} - V_{TH})^{2}} \\
 W_{3} &= 2.31 \mu{}m
@@ -161,10 +187,10 @@ W_{3} &= 2.31 \mu{}m
 \end{enumerate}
 
 \section{Problem 3}
-\label{sec:org4dd587e}
-\begin{enumerate}
+\label{sec:org111d640}
+\begin{enumerate}[(a)]
 \item Testbench and I\textsubscript{D}-V\textsubscript{GS} characteristics of NMOS and PMOS
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 \begin{enumerate}
 \item Testbench
@@ -228,11 +254,11 @@ Differentiating both sides with respect to V\textsubscript{GS(SG)} will give:
 In the case for PMOS, the relation becomes:
 \begin{equation*}
 \begin{aligned}
-\mu_{p}C_{ox} &= \frac{1}{6 I_{S}}(\frac{dI_{S}}{dV_{SG}})^{2} \\
+\mu_{p}C_{ox} &= \frac{1}{6 I_{S}}(\frac{dI_{S}}{dV_{GS}})^{2} \\
 \end{aligned}
 \end{equation*}
 
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 \begin{enumerate}
 \item \(\mu_{n}C_{OX}\)
@@ -269,10 +295,10 @@ In the case for PMOS, the relation becomes:
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org2b6165b}
-\begin{enumerate}
+\label{sec:orgb80d945}
+\begin{enumerate}[(a)]
 \item Testbench and I\textsubscript{D}-V\textsubscript{DS} characteristics of NMOS and PMOS
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 \begin{enumerate}
 \item Testbench
@@ -331,19 +357,19 @@ I_{D} &\approx \frac{\mu_{n}C_{ox}}{2} \frac{W}{L} (V_{GS} - V_{TH})^2 \\
 In the case of PMOS:
 \begin{equation*}
 \begin{aligned}
-\lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{SD}}
+\lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{DS}}
 \end{aligned}
 \end{equation*}
 
-\begin{enumerate}
-\item \(\lambda_{n} = 0.18 V^{-1}\)
+\begin{enumerate}[1.]
+\item NMOS, \(\lambda_{n} = 0.20 V^{-1}\)
 \begin{figure}[H]
 \centering
 \includegraphics[width=350px]{img/q4/b/nmos-d-id-id.pdf}
 \caption{\label{fig:nmos-d-id-id}NMOS \(\lambda_{n}-V_{DS}\)}
 \end{figure}
 
-\item \(\lambda_{p} = - 0.022 V^{-1}\)
+\item PMOS, \(\lambda_{p} = - 0.025 V^{-1}\)
 \begin{figure}[H]
 \centering
 \includegraphics[width=350px]{img/q4/b/pmos-d-is-is.pdf}
@@ -352,7 +378,7 @@ In the case of PMOS:
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:orgd85e074}
+\label{sec:org23eb4dc}
 g\textsubscript{m} for NMOS is approximately:
 \begin{equation*}
 \begin{align}
@@ -362,12 +388,12 @@ g_{m} &\approx \frac{\partial{I_{D}}}{\partial{V_{GS}}}
 For PMOS:
 \begin{equation*}
 \begin{align}
-g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
+g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{GS}}}
 \end{align}
 \end{equation*}
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item \(\frac{g_{m}}{I_{D}}-V_{GS}\)
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 \begin{figure}[H]
 \centering
@@ -382,7 +408,7 @@ g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
 \end{figure}
 \end{enumerate}
 \item \(max(|\frac{g_{m}}{I_{D(S)}}|)\)
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 
 \(max(|\frac{g_{m}}{I_{D}}|) = 30.4 V^{-1}\)
@@ -391,7 +417,7 @@ g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
 \(max(|\frac{g_{m}}{I_{S}}|) = 31.7 V^{-1}\)
 \end{enumerate}
 \item Slope factor, n
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item NMOS
 \begin{equation*}
 \begin{aligned}
@@ -414,8 +440,8 @@ n &= 1.21 \\
 \end{enumerate}
 
 \section{Problem 6}
-\label{sec:orgabba380}
-\begin{enumerate}
+\label{sec:orgcdfbdee}
+\begin{enumerate}[(a)]
 \item Small-signal Model
 \begin{figure}[H]
 \centering
@@ -423,7 +449,7 @@ n &= 1.21 \\
 \caption{\label{fig:small-signal-model}Small signal model}
 \end{figure}
 \item \(\lambda = 0 V^{-1}\)
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item \(A_{V} = \frac{v_{out}}{v_{in}}\)
 \begin{equation*}
 \begin{aligned}
@@ -439,7 +465,7 @@ R_{out} &= \frac{1}{g_{m2}}
 \end{equation*}
 \end{enumerate}
 \item \(\lambda \neq 0 V^{-1}\)
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item \(A_{V} = \frac{v_{out}}{v_{in}}\)
 \begin{equation*}
 \begin{aligned}
@@ -458,10 +484,10 @@ R_{out} &= \frac{1}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}}
 \end{enumerate}
 \end{enumerate}
 \section{Problem 7}
-\label{sec:orgc5de167}
-\begin{enumerate}
+\label{sec:orgdabdd0d}
+\begin{enumerate}[(a)]
 \item V\textsubscript{out}-V\textsubscript{in} relation when:
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item M\textsubscript{1} and M\textsubscript{2} under subthreshold conditions
 \begin{equation*}
 \begin{aligned}
@@ -561,7 +587,7 @@ V_{in} &\approx 0.69 V
 \caption{\label{fig:cir1-dvout}\(A_{v}-V_{in}\)}
 \end{figure}
 \item Small signal parameters:
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item \(|A_{v}| = 787.83mdB = 1.09\)
 \begin{figure}[H]
 \centering
@@ -578,6 +604,7 @@ V_{in} &\approx 0.69 V
 \end{enumerate}
 
 \item g\textsubscript{m} and g\textsubscript{ds}
+
 From 7(d),
 \begin{equation*}
 \begin{aligned}

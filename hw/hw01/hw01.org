@@ -6,6 +6,7 @@
 #+latex_header:
 #+latex_header: \usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
 #+latex_header: \usepackage{float}
+#+LATEX_HEADER: \usepackage{enumerate}
 #+latex_header_extra: \DeclareUnicodeCharacter{2212}{-}
 #+latex_header_extra: \setcounter{secnumdepth}{0}
 #+description:
@@ -24,8 +25,15 @@
 \end{equation*}
 #+end_export
 
-The simulation files are located in the =\spice\= folder. Each questions with simulation files will have their respective subfolder.
+#+end_comment
+
+* Simulation Files
+Each question with simulation files will have their respective subfolder.
 =q7= subfolder for problem 7 will have subfolders for the subquestions.
+
+The graphs used for the sub problems in problem 3 to 6 are plotted together.
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
+The folders for each question are arranged as follows after extracting:
 
 |-------+----+---|
 | spice |    |   |
@@ -38,9 +46,6 @@ The simulation files are located in the =\spice\= folder. Each questions with si
 |       |    | d |
 |       |    | e |
 |-------+----+---|
-
-#+end_comment
-
 * Problem 1
 For $I_{D} = 40 \mu{}A$:
 #+begin_export latex
@@ -69,7 +74,8 @@ return 1.8 - 40e-6*20e3
 #+RESULTS:
 : 1.0
 
-1. $\lambda = 0 V^{-1}$
+#+ATTR_LATEX: :options [(a)]
+a) $\lambda = 0 V^{-1}$
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
@@ -87,7 +93,7 @@ return 1.8 - 40e-6*20e3
    #+RESULTS:
    : 3.9e-07
 
-2. $\lambda = 0.06 V^{-1}$
+b) $\lambda = 0.06 V^{-1}$
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
@@ -105,6 +111,7 @@ return 1.8 - 40e-6*20e3
    #+RESULTS:
    : 4.1340000000000004e-07
 * Problem 2
+#+ATTR_LATEX: :options [(a)]
 a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    #+begin_export latex
    \begin{equation*}
@@ -114,6 +121,8 @@ a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
    \end{aligned}
    \end{equation*}
    #+end_export
+
+   #+ATTR_LATEX: :options [1.]
    1. Transistor M_{1}
       #+begin_export latex
       \begin{equation*}
@@ -173,6 +182,7 @@ a. Bulk of the transistors are connected to the source, $V_{B} = V_{S}$
       : 1.3366005791935844e-06
 
 b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
+   #+ATTR_LATEX: :options [1.]
    1. Transistor M_{1}
       #+begin_export latex
       \begin{equation*}
@@ -249,8 +259,10 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
       : 2.306805074971165e-06
 
 * Problem 3
-1. Testbench and I_{D}-V_{GS} characteristics of NMOS and PMOS
-   a. NMOS
+#+ATTR_LATEX: :options [(a)]
+a) Testbench and I_{D}-V_{GS} characteristics of NMOS and PMOS
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
       a. Testbench
          #+CAPTION: NMOS Testbench
          #+NAME: fig:nmos-testbench
@@ -262,7 +274,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          #+NAME: fig:nmos-id-vgs
          #+ATTR_LATEX: :placement [H]
          [[file:img/q3/a/nmos-id-vgs.pdf]]
-   b. PMOS
+   2. PMOS
       a. Testbench
          #+CAPTION: PMOS Testbench
          #+NAME: fig:pmos-testbench
@@ -274,7 +286,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          #+NAME: fig:pmos-is-vgs
          #+ATTR_LATEX: :placement [H]
          [[file:img/q3/a/pmos-is-vgs.pdf]]
-2. $\mu_{n(p)}C_{OX}$ and $V_{THn(p)}$
+b) $\mu_{n(p)}C_{OX}$ and $V_{THn(p)}$
 
    Assuming that channel length modulation is negligible, $V_{THn}$ for NMOS can be derived
    from the following relation:
@@ -313,12 +325,13 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
-   \mu_{p}C_{ox} &= \frac{1}{6 I_{S}}(\frac{dI_{S}}{dV_{SG}})^{2} \\
+   \mu_{p}C_{ox} &= \frac{1}{6 I_{S}}(\frac{dI_{S}}{dV_{GS}})^{2} \\
    \end{aligned}
    \end{equation*}
    #+end_export
 
-   a. NMOS
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
       a. $\mu_{n}C_{OX}$
          # $= 306 \mu{}AV^{-2}$
          #+CAPTION: NMOS \mu_{n}C_{OX}-V_{GS}
@@ -330,7 +343,7 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          #+NAME: fig:nmos-sqrt-id-vgs
          #+ATTR_LATEX: :placement [H]
          [[file:img/q3/b/nmos-sqrt-id-vgs.pdf]]
-   b. PMOS
+   2. PMOS
       a. $\mu_{p}C_{OX}$
          # $= 49 \mu{}AV^{-2}$
          #+CAPTION: PMOS \mu_{p}C_{OX}-V_{GS}
@@ -344,32 +357,34 @@ b. Bulk terminals are attached to the V_{DD}, $V_{B} = V_{DD}$.
          [[file:img/q3/b/pmos-sqrt-is-vgs.pdf]]
 
 * Problem 4
-a. Testbench and I_{D}-V_{DS} characteristics of NMOS and PMOS
-   a. NMOS
-      1. Testbench
+#+ATTR_LATEX: :options [(a)]
+a) Testbench and I_{D}-V_{DS} characteristics of NMOS and PMOS
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
+      a. Testbench
          #+CAPTION: NMOS Testbench
          #+NAME: fig:nmos-testbench-2
          #+attr_latex: :width 300px
          #+ATTR_LATEX: :placement [H]
          [[file:img/q4/a/nmos-testbench.pdf]]
-      2. I_{D}-V_{DS} characteristics
+      b. I_{D}-V_{DS} characteristics
          #+CAPTION: NMOS I_{D}-V_{DS}
          #+NAME: fig:nmos-id-vds
          #+ATTR_LATEX: :placement [H]
          [[file:img/q4/a/nmos-id-vds.pdf]]
-   b. PMOS
-      1. Testbench
+   2. PMOS
+      a. Testbench
          #+CAPTION: PMOS Testbench
          #+NAME: fig:pmos-testbench-2
          #+attr_latex: :width 300px
          #+ATTR_LATEX: :placement [H]
          [[file:img/q4/a/pmos-testbench.pdf]]
-      2. I_{S}-V_{DS} characteristics
+      b. I_{S}-V_{DS} characteristics
          #+CAPTION: PMOS I_{S}-V_{DS}
          #+NAME: fig:nmos-id-vds
          #+ATTR_LATEX: :placement [H]
          [[file:img/q4/a/pmos-is-vds.pdf]]
-b. $\lambda_{n(p)}$
+b) $\lambda_{n(p)}$
 
    Drain current characteristics for NMOS under saturation conditions:
    #+begin_export latex
@@ -403,12 +418,13 @@ b. $\lambda_{n(p)}$
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
-   \lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{SD}}
+   \lambda_{p} &\approx \frac{1}{I_{S}} \frac{dI_{S}}{dV_{DS}}
    \end{aligned}
    \end{equation*}
    #+end_export
 
-   a. $\lambda_{n} = 0.18 V^{-1}$
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS, $\lambda_{n} = 0.20 V^{-1}$
       #+CAPTION: NMOS $\lambda_{n}-V_{DS}$
       #+NAME: fig:nmos-d-id-id
       #+attr_latex: :width 350px
@@ -458,7 +474,7 @@ b. $\lambda_{n(p)}$
       #+RESULTS:
       [[file:img/q4/b/nmos-d-id-id.svg]]
 
-   b. $\lambda_{p} = - 0.022 V^{-1}$
+   2. PMOS, $\lambda_{p} = - 0.025 V^{-1}$
       #+CAPTION: PMOS $\lambda_{p}-V_{DS}$
       #+NAME: fig:nmos-d-is-is
       #+attr_latex: :width 350px
@@ -520,30 +536,34 @@ For PMOS:
 #+begin_export latex
 \begin{equation*}
 \begin{align}
-g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
+g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{GS}}}
 \end{align}
 \end{equation*}
 #+end_export
-1. $\frac{g_{m}}{I_{D}}-V_{GS}$
-   a. NMOS
+#+ATTR_LATEX: :options [(a)]
+a) $\frac{g_{m}}{I_{D}}-V_{GS}$
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
       #+CAPTION: NMOS $\frac{g_{m}}{I_{D}}-V_{GS}$
       #+NAME: fig:nmos-d-id-id-vgs
       #+ATTR_LATEX: :placement [H]
       [[file:img/q5/a/nmos-d-id-id-vgs.pdf]]
-   b. PMOS
+   2. PMOS
       #+CAPTION: PMOS $\frac{g_{m}}{I_{S}}-V_{GS}$
       #+NAME: fig:pmos-d-is-is-vgs
       #+ATTR_LATEX: :placement [H]
       [[file:img/q5/a/pmos-d-is-is-vgs.pdf]]
-2. $max(|\frac{g_{m}}{I_{D(S)}}|)$
-   a. NMOS
+b) $max(|\frac{g_{m}}{I_{D(S)}}|)$
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
 
       $max(|\frac{g_{m}}{I_{D}}|) = 30.4 V^{-1}$
-   b. PMOS
+   2. PMOS
 
       $max(|\frac{g_{m}}{I_{S}}|) = 31.7 V^{-1}$
-3. Slope factor, n
-   a. NMOS
+c) Slope factor, n
+   #+ATTR_LATEX: :options [1.]
+   1. NMOS
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -554,7 +574,7 @@ g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
       \end{aligned}
       \end{equation*}
       #+end_export
-   b. PMOS
+   2. PMOS
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -567,6 +587,7 @@ g_{m} &\approx \frac{\partial{I_{S}}}{\partial{V_{SG}}}
       #+end_export
 
 * Problem 6
+#+ATTR_LATEX: :options [(a)]
 a. Small-signal Model
    #+CAPTION: Small signal model
    #+NAME: fig:small-signal-model
@@ -574,7 +595,8 @@ a. Small-signal Model
    #+ATTR_LATEX: :placement [H]
    [[file:img/q6/a/small-signal-model.pdf]]
 b. $\lambda = 0 V^{-1}$
-   a. $A_{V} = \frac{v_{out}}{v_{in}}$
+   #+ATTR_LATEX: :options [1.]
+   1. $A_{V} = \frac{v_{out}}{v_{in}}$
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -583,7 +605,7 @@ b. $\lambda = 0 V^{-1}$
       \end{aligned}
       \end{equation*}
       #+end_export
-   b. $R_{out}$
+   2. $R_{out}$
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -592,7 +614,8 @@ b. $\lambda = 0 V^{-1}$
       \end{equation*}
       #+end_export
 c. $\lambda \neq 0 V^{-1}$
-   a. $A_{V} = \frac{v_{out}}{v_{in}}$
+   #+ATTR_LATEX: :options [1.]
+   1. $A_{V} = \frac{v_{out}}{v_{in}}$
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -603,7 +626,7 @@ c. $\lambda \neq 0 V^{-1}$
       \end{equation*}
       #+end_export
 
-   b. $R_{out}$
+   2. $R_{out}$
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -612,8 +635,10 @@ c. $\lambda \neq 0 V^{-1}$
       \end{equation*}
       #+end_export
 * Problem 7
+#+ATTR_LATEX: :options [(a)]
 a. V_{out}-V_{in} relation when:
-   a. M_{1} and M_{2} under subthreshold conditions
+   #+ATTR_LATEX: :options [1.]
+   1. M_{1} and M_{2} under subthreshold conditions
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -660,7 +685,7 @@ a. V_{out}-V_{in} relation when:
       #+RESULTS:
       : 1.6058309037900875
 
-   b. M_{1} and M_{2} at saturation
+   2. M_{1} and M_{2} at saturation
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -694,7 +719,7 @@ a. V_{out}-V_{in} relation when:
       \end{equation*}
       #+end_export
 
-   c. M_{1} at triode and M_{2} at saturation
+   3. M_{1} at triode and M_{2} at saturation
       #+begin_export latex
       \begin{equation*}
       \begin{aligned}
@@ -894,19 +919,21 @@ c. Maximum small-signal gain
    #+RESULTS:
    [[file:img/q7/c/cir1-d-vout.pdf]]
 d. Small signal parameters:
-   a. $|A_{v}| = 787.83mdB = 1.09$
+   #+ATTR_LATEX: :options [1.]
+   1. $|A_{v}| = 787.83mdB = 1.09$
       #+CAPTION:$A_{v}$ at $V_{in} = 0.69V$
       #+NAME: fig:cir1-gain
       #+ATTR_LATEX: :placement [H]
       [[file:img/q7/d/cir1-gain.pdf]]
 
-   b. $R_{out} = 4.73k\Omega$
+   2. $R_{out} = 4.73k\Omega$
       #+CAPTION:$R_{out}$ at $V_{in} = 0.69V$
       #+NAME: fig:cir1-rout
       #+ATTR_LATEX: :placement [H]
       [[file:img/q7/d/cir1-rout.pdf]]
 
 e. g_{m} and g_{ds}
+
    From 7(d),
    #+begin_export latex
    \begin{equation*}
