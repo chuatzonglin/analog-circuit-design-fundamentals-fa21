@@ -332,7 +332,30 @@ d) X_{pp}
    &= \frac{1}{22.88} \\
    \\
    X_{pp} = 54.63 mV\\
-
    \end{aligned}
    \end{equation*}
    #+end_export
+* Problem 3
+a) Sketched of
+   1. Output voltage
+      [[file:img\q3-output-voltage-sketch.pdf]]
+   2. Small-signal gain
+      [[file:img\q3-small-signal-sketch.pdf]]
+b) Small-signal model
+   [[file:img\q3-small-signal-model.pdf]]
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   R_{out} &= g_{m2}r_{o1}r_{o2} + r_{o1} + r_{o2} \\
+   &\approx g_{m2}r_{o1}r_{o2}
+   \\
+   G_{m} &= \frac{-g_{m1}(g_{m2} + \frac{1}{r_{o1}})}{g_{m2} + \frac{1}{r_{o1}} + \frac{1}{r_{o2}}} \\
+   &\approx -g_{m1} \\
+   \\
+   \frac{V_{out}}{V_{in}} &= g_{m1}g_{m2}r_{o1}r_{o2} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+* Problem 4
+a) Testbench
