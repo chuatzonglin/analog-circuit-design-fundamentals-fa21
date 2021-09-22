@@ -358,4 +358,25 @@ b) Small-signal model
    \end{equation*}
    #+end_export
 * Problem 4
-a) Testbench
+1) V_{out} - V_{in} characteristics
+   [[file:img\q4\a.svg]]
+2) Gain of amplifier, $\frac{dV_{out}}{dV_{in}}$
+   [[file:img\q4\b.svg]]
+   1. V_{out} = 0.6 V
+
+      $\frac{dV_{out}}{dV_{in}}$ = -35.59
+   2. V_{out} = 2.8 V
+
+      $\frac{dV_{out}}{dV_{in}}$ = -32.77
+3) Maximum gain is -50.07 when V_{in} = 489mV
+4) V_{out, max} = 3.24 V
+   V_{out, min} = 56 mV
+   V_{out, pp} = 3.184 V
+5) When V_{out} is
+   1. 0.6 V, V_{in} = 0.514 V
+
+      Gain = 36.82
+
+   2. 2.8 V, V_{in} = 0.464 V
+
+      Gain = 31.54
