@@ -6,6 +6,7 @@
 #+latex_header:
 #+latex_header: \usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
 #+latex_header: \usepackage{float}
+#+LATEX_HEADER: \usepackage{enumerate}
 #+latex_header_extra: \DeclareUnicodeCharacter{2212}{-}
 #+latex_header_extra: \setcounter{secnumdepth}{0}
 #+description:
@@ -16,7 +17,9 @@
 #+STARTUP: overview
 
 * Problem 1
+#+ATTR_LATEX: :options [(a)]
 a) Overdrive voltage, V_{gt}, for:
+   #+ATTR_LATEX: :options [1.]
    1. M1
       #+begin_export latex
       \begin{equation*}
@@ -59,7 +62,11 @@ a) Overdrive voltage, V_{gt}, for:
 b) Small-signal gain
    #+begin_comment
    Small signal model:
-   [[file:img/q1/b/small-signal-model.pdf]]
+   #+CAPTION: Small-signal model of Fig. 1
+   #+NAME: fig:small-signal-model-q1
+   #+attr_latex: :width 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q1/small-signal-model.pdf]]
    #+end_comment
 
    #+begin_export latex
@@ -139,6 +146,7 @@ c) V_{out} output swing
 d)
 
 * Problem 2
+#+ATTR_LATEX: :options [(a)]
 a) For M1 to be 100mV from triode,
    #+begin_export latex
    \begin{equation*}
@@ -195,8 +203,12 @@ a) For M1 to be 100mV from triode,
 b) Small-signal gain
 
    #+begin_comment
-   Small-signal model
-   [[file:img\small-signal-model-q2.pdf]]
+   Small-signal model:
+   #+CAPTION: Small-signal model of Fig. 2
+   #+NAME: fig:small-signal-model-q2
+   #+attr_latex: :width 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q2/small-signal-model.pdf]]
    #+end_comment
 
    #+begin_export latex
@@ -315,6 +327,7 @@ c) Assume V_{b} to be 1.65V,
    : 0.9972474768348052
 
 d) X_{pp}
+
    Gain of X,
    #+begin_export latex
    \begin{equation*}
@@ -325,24 +338,39 @@ d) X_{pp}
    \end{aligned}
    \end{equation*}
    #+end_export
+   X_{pp}
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
    \frac{X}{V_{out}} &= \frac{X}{V_{in}}\frac{V_{in}}{V_{out}} \\
    &= \frac{1}{22.88} \\
    \\
-   X_{pp} = 54.63 mV\\
+   X_{pp} &= 54.63 mV\\
    \end{aligned}
    \end{equation*}
    #+end_export
 * Problem 3
-a) Sketched of
+#+ATTR_LATEX: :options [(a)]
+a) Sketch of:
+   #+ATTR_LATEX: :options [1.]
    1. Output voltage
-      [[file:img\q3-output-voltage-sketch.pdf]]
+      #+CAPTION: Output voltage sketch
+      #+NAME: fig:output-voltage-sketch-q3
+      #+attr_latex: :width 300px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q3/output-voltage-sketch.pdf]]
    2. Small-signal gain
-      [[file:img\q3-small-signal-sketch.pdf]]
+      #+CAPTION: Small-signal gain
+      #+NAME: fig:small-signal-sketch-q3
+      #+attr_latex: :width 300px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q3/small-signal-sketch.pdf]]
 b) Small-signal model
-   [[file:img\q3-small-signal-model.pdf]]
+   #+CAPTION: Small-signal model of folded-cascode stage
+   #+NAME: fig:small-signal-model-q3
+   #+attr_latex: :width 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/small-signal-model.pdf]]
 
    #+begin_export latex
    \begin{equation*}
@@ -358,25 +386,84 @@ b) Small-signal model
    \end{equation*}
    #+end_export
 * Problem 4
+#+ATTR_LATEX: :options [(a)]
 1) V_{out} - V_{in} characteristics
-   [[file:img\q4\a.svg]]
-2) Gain of amplifier, $\frac{dV_{out}}{dV_{in}}$
-   [[file:img\q4\b.svg]]
+   #+CAPTION: V_{out} - V_{in} characteristics
+   #+NAME: fig:vout-q4
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/a.pdf]]
+2) Small-signal gain, $\frac{dV_{out}}{dV_{in}}$
+   #+CAPTION: Small-signal gain, $\frac{dV_{out}}{dV_{in}}$
+   #+NAME: fig:dvout-q4
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/b.pdf]]
+
+   From figure [[fig:dvout-q4]] the gain when:
+   #+ATTR_LATEX: :options [1.]
    1. V_{out} = 0.6 V
 
-      $\frac{dV_{out}}{dV_{in}}$ = -35.59
+      $\frac{dV_{out}}{dV_{in}} = -35.59$
    2. V_{out} = 2.8 V
 
-      $\frac{dV_{out}}{dV_{in}}$ = -32.77
-3) Maximum gain is -50.07 when V_{in} = 489mV
-4) V_{out, max} = 3.24 V
-   V_{out, min} = 56 mV
-   V_{out, pp} = 3.184 V
-5) When V_{out} is
-   1. 0.6 V, V_{in} = 0.514 V
+      $\frac{dV_{out}}{dV_{in}} = -32.77$
+3) From figure [[fig:dvout-q4]], the input voltage, V_{in}, for maximum gain, $max(|\frac{dV_{out}}{dV_{in}}|)$ is given to be:
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   max(|\frac{dV_{out}}{dV_{in}}|) &= 50.07 \\
+   V_{in} &= 489mV \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+4) Output voltage swing for gain of 1,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{out, max} &= 3.24 V \\
+   V_{out, min} &= 56 mV \\
+   V_{out, pp} &= 3.184 V \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+   Output peak to peak voltage
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{out, pp} &= 3.184 V \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+5) Small-signal voltage gain when:
+   #+ATTR_LATEX: :options [1.]
+   1. V_{out} = 0.6 V, V_{in} = 0.514 V
+      #+CAPTION: Small-signal gain, $|\frac{V_{out}}{V_{in}}|$, V_{out} = 0.6 V, V_{in} = 0.514 V
+      #+NAME: fig:gain-q4-e1
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q4/e1.pdf]]
 
       Gain = 36.82
 
-   2. 2.8 V, V_{in} = 0.464 V
+   2. V_{out} = 2.8 V, V_{in} = 0.464 V
+      #+CAPTION: Small-signal gain, $|\frac{V_{out}}{V_{in}}|$, V_{out} = 2.8 V, V_{in} = 0.464 V
+      #+NAME: fig:gain-q4-e2
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q4/e2.pdf]]
 
       Gain = 31.54
+* Problem 5
+#+ATTR_LATEX: :options [(a)]
+a) Procedure for designing V_{b} for M1 to be 100mV away from triode,
+   1. Select an initial value V_{b} for M1 and M2 to be in saturation when V_{in} > V_{TH1}. In figure [[fig:testbench-q5]], V_{b} = 1.5 V.
+      From the error logfile [[fig:errorlog-q5]], V_{DS1} > V_{GS1} - V_{TH1} and V_{DS2} > V_{GS2} - V_{TH2}.
+      #+CAPTION: Testbench for Q5
+      #+NAME: fig:testbench-q5
+      #+attr_latex: :width 300px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q5/testbench-q5.pdf]]
+      #+CAPTION: Semiconductor Device Operating Points
+      #+NAME: fig:errorlog-q5
+      #+attr_latex: :width 300px
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q5/errorlog-q5.png]]
+   2. Doing a DC-sweep for I_{D1}-V_{in}, $V_{in}\approx0.6V$ when I_{D1} = 0.35mA.
+   3. From the operation point simulation, V_{TH1} is determined to be 0.497V.

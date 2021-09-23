@@ -29,9 +29,20 @@
     "capt-of"
     "hyperref"
     "geometry"
-    "float")
+    "float"
+    "enumerate")
    (LaTeX-add-labels
-    "sec:org30ad0b8"
-    "sec:orgd74c234"))
+    "sec:org82972da"
+    "sec:orgb9789dc"
+    "sec:org0495006"
+    "fig:output-voltage-sketch-q3"
+    "fig:small-signal-sketch-q3"
+    "fig:small-signal-model-q3"
+    "sec:org7839784"
+    "fig:vout-q4"
+    "fig:dvout-q4"
+    "fig:gain-q4-e1"
+    "fig:gain-q4-e2"
+    "sec:org1ec73a1"))
  :latex)
 
