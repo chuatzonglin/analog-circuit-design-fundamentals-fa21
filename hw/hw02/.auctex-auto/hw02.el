@@ -32,21 +32,25 @@
     "float"
     "enumerate")
    (LaTeX-add-labels
-    "sec:org6f8f0d0"
-    "sec:org2172e11"
-    "sec:org9935c25"
+    "sec:orgb13d396"
+    "sec:orgff94d69"
+    "sec:orge152db9"
     "fig:output-voltage-sketch-q3"
     "fig:small-signal-sketch-q3"
     "fig:small-signal-model-q3"
-    "sec:org780a0ad"
+    "sec:org6d5aba7"
     "fig:vout-q4"
     "fig:dvout-q4"
     "fig:gain-q4-e1"
     "fig:gain-q4-e2"
-    "sec:org02440e6"
+    "sec:orgeafa4a6"
     "fig:testbench-q5"
     "fig:errorlog-q5"
     "fig:id-vin-q5"
-    "fig:vx-vb-q5"))
+    "fig:vx-vb-q5"
+    "fig:iout-vout-q5"
+    "sec:org031587b"
+    "fig:rout-vout-q6"
+    "fig:max-rout-q6"))
  :latex)
 

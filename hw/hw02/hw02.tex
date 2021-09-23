@@ -1,4 +1,4 @@
-% Created 2021-09-23 Thu 18:53
+% Created 2021-09-24 Fri 01:01
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 
 
 \section{Problem 1}
-\label{sec:org6f8f0d0}
+\label{sec:orgb13d396}
 \begin{enumerate}[(a)]
 \item Overdrive voltage, V\textsubscript{gt}, for:
 \begin{enumerate}[1.]
@@ -117,7 +117,7 @@ V_{out, pp} &= 2.923 V - 0.109 V \\
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org2172e11}
+\label{sec:orgff94d69}
 \begin{enumerate}[(a)]
 \item For M1 to be 100mV from triode,
 \begin{equation*}
@@ -228,27 +228,27 @@ X_{pp} &= 54.63 mV\\
 \end{equation*}
 \end{enumerate}
 \section{Problem 3}
-\label{sec:org9935c25}
+\label{sec:orge152db9}
 \begin{enumerate}[(a)]
 \item Sketch of:
 \begin{enumerate}[1.]
 \item Output voltage
-\begin{figure}[H]
+[[\begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/output-voltage-sketch.pdf}
+\includegraphics[width=300px]{img/q3/output-voltage-sketch.png}
 \caption{\label{fig:output-voltage-sketch-q3}Output voltage sketch}
 \end{figure}
 \item Small-signal gain
 \begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/small-signal-sketch.pdf}
+\includegraphics[width=300px]{img/q3/small-signal-sketch-q6.png}
 \caption{\label{fig:small-signal-sketch-q3}Small-signal gain}
 \end{figure}
 \end{enumerate}
 \item Small-signal model
 \begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/small-signal-model.pdf}
+\includegraphics[width=300px]{img/q3/small-signal-model-q3.pdf}
 \caption{\label{fig:small-signal-model-q3}Small-signal model of folded-cascode stage}
 \end{figure}
 
@@ -265,7 +265,7 @@ G_{m} &= \frac{-g_{m1}(g_{m2} + \frac{1}{r_{o1}})}{g_{m2} + \frac{1}{r_{o1}} + \
 \end{equation*}
 \end{enumerate}
 \section{Problem 4}
-\label{sec:org780a0ad}
+\label{sec:org6d5aba7}
 \begin{enumerate}[(a)]
 \item V\textsubscript{out} - V\textsubscript{in} characteristics
 \begin{figure}[H]
@@ -332,9 +332,9 @@ Gain = 31.54
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:org02440e6}
+\label{sec:orgeafa4a6}
 \begin{enumerate}[(a)]
-\item Procedure for designing V\textsubscript{b} for M1 to be 100mV away from triode,
+\item Procedure for designing V\textsubscript{b} for M1 to be 100mV away from triode, V\textsubscript{b} = 0.825V, is determined by the following:
 \begin{enumerate}
 \item Select an initial value V\textsubscript{b} for M1 and M2 to be in saturation when V\textsubscript{in} > V\textsubscript{TH1}. In figure \ref{fig:testbench-q5}, V\textsubscript{b} = 1.5 V.
 From the error logfile \ref{fig:errorlog-q5}, V\textsubscript{DS1} > V\textsubscript{GS1} - V\textsubscript{TH1} and V\textsubscript{DS2} > V\textsubscript{GS2} - V\textsubscript{TH2}.
@@ -368,5 +368,41 @@ V_{x} &= V_{in} - V_{TH1} + 100mV \\
 \caption{\label{fig:vx-vb-q5}V\textsubscript{x}-V\textsubscript{b}}
 \end{figure}
 \end{enumerate}
+
+\item I\textsubscript{OUT}-V\textsubscript{OUT} when V\textsubscript{IN} is fixed for I\textsubscript{D1} = 0.35 mA
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q5/iout-vout-q5.pdf}
+\caption{\label{fig:iout-vout-q5}I\textsubscript{OUT}-V\textsubscript{OUT}}
+\end{figure}
 \end{enumerate}
+
+\section{Problem 6}
+\label{sec:org031587b}
+The output resistance, R\textsubscript{out} is the reciprocal of the slope of I\textsubscript{OUT}-V\textsubscript{OUT},
+\begin{equation*}
+\begin{aligned}
+R_{out} &= (\frac{I_{OUT}}{V_{OUT}})^{-1} \\
+\end{aligned}
+\end{equation*}
+The results are shown in figure \ref{fig:rout-vout-q6},
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q6/rout-vout-q6.pdf}
+\caption{\label{fig:rout-vout-q6}R\textsubscript{OUT}-V\textsubscript{OUT}}
+\end{figure}
+
+From figure \ref{fig:max-rout-q6},
+
+max(R\textsubscript{out}) = 4920 \(\Omega\)
+
+when,
+
+V\textsubscript{out} = 1.53 V
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q6/max-rout.pdf}
+\caption{\label{fig:max-rout-q6}Maximum R\textsubscript{out}}
+\end{figure}
 \end{document}
