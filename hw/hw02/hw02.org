@@ -452,7 +452,7 @@ b) Small-signal model
       Gain = 31.54
 * Problem 5
 #+ATTR_LATEX: :options [(a)]
-a) Procedure for designing V_{b} for M1 to be 100mV away from triode,
+a) Procedure for designing V_{b} for M1 to be 100mV away from triode, V_{b} = 0.825V, is determined by the following:
    1. Select an initial value V_{b} for M1 and M2 to be in saturation when V_{in} > V_{TH1}. In figure [[fig:testbench-q5]], V_{b} = 1.5 V.
       From the error logfile [[fig:errorlog-q5]], V_{DS1} > V_{GS1} - V_{TH1} and V_{DS2} > V_{GS2} - V_{TH2}.
       #+CAPTION: Testbench for Q5
@@ -466,4 +466,94 @@ a) Procedure for designing V_{b} for M1 to be 100mV away from triode,
       #+ATTR_LATEX: :placement [H]
       [[file:img/q5/errorlog-q5.png]]
    2. Doing a DC-sweep for I_{D1}-V_{in}, $V_{in}\approx0.6V$ when I_{D1} = 0.35mA.
-   3. From the operation point simulation, V_{TH1} is determined to be 0.497V.
+      #+CAPTION: I_{D1}-V_{in}
+      #+NAME: fig:id-vin-q5
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q5/id-vin.pdf]]
+   3. From the operation point simulation int figure [[fig:errorlog-q5]], V_{TH1} is determined to be 0.497V. For M1 to be 100mV from triode region,
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      V_{x} &= V_{in} - V_{TH1} + 100mV \\
+      &\approx 0.2 V
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+   4. DC-sweeping V_{x}-V_{b} and determining V_{b} for V_{x} = 0.2V. From the figure [[fig:vx-vb-q5]] , V_{b} = 0.825V.
+      #+CAPTION: V_{x}-V_{b}
+      #+NAME: fig:vx-vb-q5
+      #+ATTR_LATEX: :placement [H]
+      [[file:img/q5/vx-vin-q5.pdf]]
+
+b) I_{OUT}-V_{OUT} when V_{IN} is fixed for I_{D1} = 0.35 mA
+   #+CAPTION: I_{OUT}-V_{OUT}
+   #+NAME: fig:iout-vout-q5
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q5/iout-vout-q5.pdf]]
+
+* Problem 6
+The output resistance, R_{out} is the reciprocal of the slope of I_{OUT}-V_{OUT},
+#+begin_export latex
+\begin{equation*}
+\begin{aligned}
+R_{out} &= (\frac{I_{OUT}}{V_{OUT}})^{-1} \\
+\end{aligned}
+\end{equation*}
+#+end_export
+The results are shown in figure [[fig:rout-vout-q6]],
+#+CAPTION: R_{OUT}-V_{OUT}
+#+NAME: fig:rout-vout-q6
+#+ATTR_LATEX: :placement [H]
+[[file:img/q6/rout-vout-q6.pdf]]
+
+From figure [[fig:max-rout-q6]],
+
+max(R_{out}) = 4920 \Omega
+
+when,
+
+V_{out} = 1.53 V
+
+   #+begin_src python :results file :exports results
+   from pandas import read_csv
+   import matplotlib.pyplot as plt
+   import numpy as np
+   # Import graph format
+   try:
+       plt.style.use("../../../../graph-formats/myGraphs1.mplstyle")
+   except:
+       pass
+
+   # LTSpice Simulation data
+   df = read_csv("spice/q6/a/cascode.txt", delimiter = "\t")
+
+   # Argmax
+   argmax = np.argmax(df.iloc[:, 1].to_numpy())
+   xmax, ymax = df.iloc[:,0].to_numpy()[argmax], df.iloc[:,1].to_numpy()[argmax]
+
+   # Plot
+   plt.plot(df.iloc[:, 0].to_numpy(), df.iloc[:, 1].to_numpy(), c = 'b')
+   plt.scatter(xmax, ymax, c = "r", marker = "x")
+
+   plt.annotate("Vout = {0:.2f} V\n Rout = {1:.0f} Ohm".format(xmax, ymax), (xmax, ymax - 500))
+
+   # Label
+   plt.xlabel("$V_{out}$")
+   plt.ylabel("$R_{out}$")
+
+   # Range
+
+   # Grid
+   plt.minorticks_on()
+   plt.grid()
+
+   fname = "img/q6/max-rout.pdf"
+   plt.savefig(fname)
+   return fname
+   #+end_src
+
+   #+RESULTS:
+   #+CAPTION: Maximum R_{out}
+   #+NAME: fig:max-rout-q6
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q6/max-rout.pdf]]

@@ -1,4 +1,4 @@
-% Created 2021-09-23 Thu 17:56
+% Created 2021-09-23 Thu 18:53
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 
 
 \section{Problem 1}
-\label{sec:org82972da}
+\label{sec:org6f8f0d0}
 \begin{enumerate}[(a)]
 \item Overdrive voltage, V\textsubscript{gt}, for:
 \begin{enumerate}[1.]
@@ -117,7 +117,7 @@ V_{out, pp} &= 2.923 V - 0.109 V \\
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orgb9789dc}
+\label{sec:org2172e11}
 \begin{enumerate}[(a)]
 \item For M1 to be 100mV from triode,
 \begin{equation*}
@@ -228,7 +228,7 @@ X_{pp} &= 54.63 mV\\
 \end{equation*}
 \end{enumerate}
 \section{Problem 3}
-\label{sec:org0495006}
+\label{sec:org9935c25}
 \begin{enumerate}[(a)]
 \item Sketch of:
 \begin{enumerate}[1.]
@@ -265,7 +265,7 @@ G_{m} &= \frac{-g_{m1}(g_{m2} + \frac{1}{r_{o1}})}{g_{m2} + \frac{1}{r_{o1}} + \
 \end{equation*}
 \end{enumerate}
 \section{Problem 4}
-\label{sec:org7839784}
+\label{sec:org780a0ad}
 \begin{enumerate}[(a)]
 \item V\textsubscript{out} - V\textsubscript{in} characteristics
 \begin{figure}[H]
@@ -332,5 +332,41 @@ Gain = 31.54
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:org1ec73a1}
+\label{sec:org02440e6}
+\begin{enumerate}[(a)]
+\item Procedure for designing V\textsubscript{b} for M1 to be 100mV away from triode,
+\begin{enumerate}
+\item Select an initial value V\textsubscript{b} for M1 and M2 to be in saturation when V\textsubscript{in} > V\textsubscript{TH1}. In figure \ref{fig:testbench-q5}, V\textsubscript{b} = 1.5 V.
+From the error logfile \ref{fig:errorlog-q5}, V\textsubscript{DS1} > V\textsubscript{GS1} - V\textsubscript{TH1} and V\textsubscript{DS2} > V\textsubscript{GS2} - V\textsubscript{TH2}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/q5/testbench-q5.pdf}
+\caption{\label{fig:testbench-q5}Testbench for Q5}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300px]{img/q5/errorlog-q5.png}
+\caption{\label{fig:errorlog-q5}Semiconductor Device Operating Points}
+\end{figure}
+\item Doing a DC-sweep for I\textsubscript{D1}-V\textsubscript{in}, \(V_{in}\approx0.6V\) when I\textsubscript{D1} = 0.35mA.
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q5/id-vin.pdf}
+\caption{\label{fig:id-vin-q5}I\textsubscript{D1}-V\textsubscript{in}}
+\end{figure}
+\item From the operation point simulation int figure \ref{fig:errorlog-q5}, V\textsubscript{TH1} is determined to be 0.497V. For M1 to be 100mV from triode region,
+\begin{equation*}
+\begin{aligned}
+V_{x} &= V_{in} - V_{TH1} + 100mV \\
+&\approx 0.2 V
+\end{aligned}
+\end{equation*}
+\item DC-sweeping V\textsubscript{x}-V\textsubscript{b} and determining V\textsubscript{b} for V\textsubscript{x} = 0.2V. From the figure \ref{fig:vx-vb-q5} , V\textsubscript{b} = 0.825V.
+\begin{figure}[H]
+\centering
+\includegraphics[width=.9\linewidth]{img/q5/vx-vin-q5.pdf}
+\caption{\label{fig:vx-vb-q5}V\textsubscript{x}-V\textsubscript{b}}
+\end{figure}
+\end{enumerate}
+\end{enumerate}
 \end{document}
