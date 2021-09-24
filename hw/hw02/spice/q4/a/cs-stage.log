@@ -1,4 +1,4 @@
-Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\hw\hw02\spice\q4\cs-stage.asc
+Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\hw\hw02\spice\q4\a\cs-stage.asc
 
 Ignoring BSIM parameter XL
 Ignoring BSIM parameter XW
@@ -23,8 +23,8 @@ Warning: Ps = 0 is less than W.
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 
-Date: Wed Sep 22 22:37:58 2021
-Total elapsed time: 0.175 seconds.
+Date: Fri Sep 24 13:17:50 2021
+Total elapsed time: 0.296 seconds.
 
 tnom = 27
 temp = 27
@@ -37,6 +37,6 @@ rejected = 0
 matrix size = 7
 fillins = 0
 solver = Normal
-Matrix Compiler1: 196 bytes object code size  0.1/0.1/[0.1]
-Matrix Compiler2: 461 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler1: 196 bytes object code size  0.1/0.0/[0.0]
+Matrix Compiler2: 461 bytes object code size  0.1/0.0/[0.0]
 

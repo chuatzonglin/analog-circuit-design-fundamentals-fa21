@@ -1,4 +1,4 @@
-% Created 2021-09-24 Fri 01:01
+% Created 2021-09-24 Fri 13:20
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 
 
 \section{Problem 1}
-\label{sec:orgb13d396}
+\label{sec:org32b573f}
 \begin{enumerate}[(a)]
 \item Overdrive voltage, V\textsubscript{gt}, for:
 \begin{enumerate}[1.]
@@ -113,11 +113,14 @@ V_{out, pp} &= 2.923 V - 0.109 V \\
 \end{aligned}
 \end{equation*}
 
-\item 
+\item The up-swing is limited by the PMOS leaving saturation, while the down swing is limited by the NMOS leaving saturation.
+The up-swing can be increased by connecting the base of the PMOS to the drain to form a diode connected structure,
+therefore V\textsubscript{SD2} will always be larger than V\textsubscript{gt2} by V\textsubscript{TH2}.
+As a result, V\textsubscript{out} can be increased to V\textsubscript{DD} - V\textsubscript{TH2} without PMOS leaving saturation.
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:orgff94d69}
+\label{sec:org1cd7b84}
 \begin{enumerate}[(a)]
 \item For M1 to be 100mV from triode,
 \begin{equation*}
@@ -228,27 +231,27 @@ X_{pp} &= 54.63 mV\\
 \end{equation*}
 \end{enumerate}
 \section{Problem 3}
-\label{sec:orge152db9}
+\label{sec:orgce51d5e}
 \begin{enumerate}[(a)]
 \item Sketch of:
 \begin{enumerate}[1.]
 \item Output voltage
 [[\begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/output-voltage-sketch.png}
+\includegraphics[width=.9\linewidth]{img/q3/output-voltage-sketch.png}
 \caption{\label{fig:output-voltage-sketch-q3}Output voltage sketch}
 \end{figure}
 \item Small-signal gain
 \begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/small-signal-sketch-q6.png}
+\includegraphics[width=.9\linewidth]{img/q3/small-signal-sketch-q6.png}
 \caption{\label{fig:small-signal-sketch-q3}Small-signal gain}
 \end{figure}
 \end{enumerate}
 \item Small-signal model
 \begin{figure}[H]
 \centering
-\includegraphics[width=300px]{img/q3/small-signal-model-q3.pdf}
+\includegraphics[width=.9\linewidth]{img/q3/small-signal-model-q3.pdf}
 \caption{\label{fig:small-signal-model-q3}Small-signal model of folded-cascode stage}
 \end{figure}
 
@@ -265,14 +268,22 @@ G_{m} &= \frac{-g_{m1}(g_{m2} + \frac{1}{r_{o1}})}{g_{m2} + \frac{1}{r_{o1}} + \
 \end{equation*}
 \end{enumerate}
 \section{Problem 4}
-\label{sec:org6d5aba7}
+\label{sec:org83f20e4}
 \begin{enumerate}[(a)]
-\item V\textsubscript{out} - V\textsubscript{in} characteristics
+\item Testbench
+\begin{figure}[H]
+\centering
+\includegraphics[height=300px]{img/q4/testbench-q4.pdf}
+\caption{\label{fig:testbench-q4}Testbench}
+\end{figure}
+
+V\textsubscript{out} - V\textsubscript{in} characteristics
 \begin{figure}[H]
 \centering
 \includegraphics[width=.9\linewidth]{img/q4/a.pdf}
 \caption{\label{fig:vout-q4}V\textsubscript{out} - V\textsubscript{in} characteristics}
 \end{figure}
+
 \item Small-signal gain, \(\frac{dV_{out}}{dV_{in}}\)
 \begin{figure}[H]
 \centering
@@ -332,10 +343,10 @@ Gain = 31.54
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:orgeafa4a6}
+\label{sec:orgaf0e0cb}
 \begin{enumerate}[(a)]
 \item Procedure for designing V\textsubscript{b} for M1 to be 100mV away from triode, V\textsubscript{b} = 0.825V, is determined by the following:
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item Select an initial value V\textsubscript{b} for M1 and M2 to be in saturation when V\textsubscript{in} > V\textsubscript{TH1}. In figure \ref{fig:testbench-q5}, V\textsubscript{b} = 1.5 V.
 From the error logfile \ref{fig:errorlog-q5}, V\textsubscript{DS1} > V\textsubscript{GS1} - V\textsubscript{TH1} and V\textsubscript{DS2} > V\textsubscript{GS2} - V\textsubscript{TH2}.
 \begin{figure}[H]
@@ -378,7 +389,7 @@ V_{x} &= V_{in} - V_{TH1} + 100mV \\
 \end{enumerate}
 
 \section{Problem 6}
-\label{sec:org031587b}
+\label{sec:orgf342922}
 The output resistance, R\textsubscript{out} is the reciprocal of the slope of I\textsubscript{OUT}-V\textsubscript{OUT},
 \begin{equation*}
 \begin{aligned}

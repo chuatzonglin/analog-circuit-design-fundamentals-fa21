@@ -24,8 +24,8 @@ Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 Direct Newton iteration for .op point succeeded.
 
-Date: Wed Sep 22 23:45:50 2021
-Total elapsed time: 0.159 seconds.
+Date: Fri Sep 24 13:18:40 2021
+Total elapsed time: 0.232 seconds.
 
 tnom = 27
 temp = 27

@@ -16,6 +16,25 @@
 #+date: \today
 #+STARTUP: overview
 
+* Simulation Files
+Each question with simulation files will have their respective subfolder.
+Except for =q6=, the other questions will have separate subfolders for each sub questions.
+
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file), the intermediate graphs for
+=q5(a)= are not stored, except for the final graph.
+The folders for each question are arranged as follows after extracting:
+
+|-------+----+---|
+| spice |    |   |
+|       | q4 |   |
+|       |    | a |
+|       |    | b |
+|       |    | e |
+|       | q5 |   |
+|       |    | a |
+|       |    | b |
+|       | q6 |   |
+|-------+----+---|
 * Problem 1
 #+ATTR_LATEX: :options [(a)]
 a) Overdrive voltage, V_{gt}, for:
@@ -359,19 +378,16 @@ a) Sketch of:
    1. Output voltage
       #+CAPTION: Output voltage sketch
       #+NAME: fig:output-voltage-sketch-q3
-      #+attr_latex: :width 300px
       #+ATTR_LATEX: :placement [H]
       [[file:img/q3/output-voltage-sketch.png
    2. Small-signal gain
       #+CAPTION: Small-signal gain
       #+NAME: fig:small-signal-sketch-q3
-      #+attr_latex: :width 300px
       #+ATTR_LATEX: :placement [H]
       [[file:img/q3/small-signal-sketch-q6.png]]
 b) Small-signal model
    #+CAPTION: Small-signal model of folded-cascode stage
    #+NAME: fig:small-signal-model-q3
-   #+attr_latex: :width 300px
    #+ATTR_LATEX: :placement [H]
    [[file:img/q3/small-signal-model-q3.pdf]]
 
@@ -390,11 +406,19 @@ b) Small-signal model
    #+end_export
 * Problem 4
 #+ATTR_LATEX: :options [(a)]
-1) V_{out} - V_{in} characteristics
+1) Testbench
+   #+CAPTION: Testbench
+   #+NAME: fig:testbench-q4
+   #+attr_latex: :height 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/testbench-q4.pdf]]
+
+   V_{out} - V_{in} characteristics
    #+CAPTION: V_{out} - V_{in} characteristics
    #+NAME: fig:vout-q4
    #+ATTR_LATEX: :placement [H]
    [[file:img/q4/a.pdf]]
+
 2) Small-signal gain, $\frac{dV_{out}}{dV_{in}}$
    #+CAPTION: Small-signal gain, $\frac{dV_{out}}{dV_{in}}$
    #+NAME: fig:dvout-q4
@@ -456,6 +480,7 @@ b) Small-signal model
 * Problem 5
 #+ATTR_LATEX: :options [(a)]
 a) Procedure for designing V_{b} for M1 to be 100mV away from triode, V_{b} = 0.825V, is determined by the following:
+   #+ATTR_LATEX: :options [1.]
    1. Select an initial value V_{b} for M1 and M2 to be in saturation when V_{in} > V_{TH1}. In figure [[fig:testbench-q5]], V_{b} = 1.5 V.
       From the error logfile [[fig:errorlog-q5]], V_{DS1} > V_{GS1} - V_{TH1} and V_{DS2} > V_{GS2} - V_{TH2}.
       #+CAPTION: Testbench for Q5
@@ -528,7 +553,7 @@ V_{out} = 1.53 V
        pass
 
    # LTSpice Simulation data
-   df = read_csv("spice/q6/a/cascode.txt", delimiter = "\t")
+   df = read_csv("spice/q6/cascode.txt", delimiter = "\t")
 
    # Argmax
    argmax = np.argmax(df.iloc[:, 1].to_numpy())
