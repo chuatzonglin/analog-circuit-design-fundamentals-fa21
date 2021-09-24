@@ -20,21 +20,22 @@
 Each question with simulation files will have their respective subfolder.
 Except for =q6=, the other questions will have separate subfolders for each sub questions.
 
-Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file), the intermediate graphs for
-=q5(a)= are not stored, except for the final graph.
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
 The folders for each question are arranged as follows after extracting:
 
-|-------+----+---|
-| spice |    |   |
-|       | q4 |   |
-|       |    | a |
-|       |    | b |
-|       |    | e |
-|       | q5 |   |
-|       |    | a |
-|       |    | b |
-|       | q6 |   |
-|-------+----+---|
+|-------+----+---+-------|
+| spice |    |   |       |
+|       | q4 |   |       |
+|       |    | a |       |
+|       |    |   | step3 |
+|       |    |   | step4 |
+|       |    | b |       |
+|       |    | e |       |
+|       | q5 |   |       |
+|       |    | a |       |
+|       |    | b |       |
+|       | q6 |   |       |
+|-------+----+---+-------|
 * Problem 1
 #+ATTR_LATEX: :options [(a)]
 a) Overdrive voltage, V_{gt}, for:

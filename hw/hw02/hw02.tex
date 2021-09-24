@@ -1,4 +1,4 @@
-% Created 2021-09-24 Fri 13:20
+% Created 2021-09-24 Fri 13:31
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -37,8 +37,33 @@
 \tableofcontents
 
 
+\section{Simulation Files}
+\label{sec:org8009e0f}
+Each question with simulation files will have their respective subfolder.
+Except for \texttt{q6}, the other questions will have separate subfolders for each sub questions.
+
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
+The folders for each question are arranged as follows after extracting:
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+spice &  &  & \\
+ & q4 &  & \\
+ &  & a & \\
+ &  &  & step3\\
+ &  &  & step4\\
+ &  & b & \\
+ &  & e & \\
+ & q5 &  & \\
+ &  & a & \\
+ &  & b & \\
+ & q6 &  & \\
+\hline
+\end{tabular}
+\end{center}
 \section{Problem 1}
-\label{sec:org32b573f}
+\label{sec:org853fe77}
 \begin{enumerate}[(a)]
 \item Overdrive voltage, V\textsubscript{gt}, for:
 \begin{enumerate}[1.]
@@ -120,7 +145,7 @@ As a result, V\textsubscript{out} can be increased to V\textsubscript{DD} - V\te
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org1cd7b84}
+\label{sec:orgfcef7cf}
 \begin{enumerate}[(a)]
 \item For M1 to be 100mV from triode,
 \begin{equation*}
@@ -231,7 +256,7 @@ X_{pp} &= 54.63 mV\\
 \end{equation*}
 \end{enumerate}
 \section{Problem 3}
-\label{sec:orgce51d5e}
+\label{sec:orgcb5fc59}
 \begin{enumerate}[(a)]
 \item Sketch of:
 \begin{enumerate}[1.]
@@ -268,7 +293,7 @@ G_{m} &= \frac{-g_{m1}(g_{m2} + \frac{1}{r_{o1}})}{g_{m2} + \frac{1}{r_{o1}} + \
 \end{equation*}
 \end{enumerate}
 \section{Problem 4}
-\label{sec:org83f20e4}
+\label{sec:orgf11accb}
 \begin{enumerate}[(a)]
 \item Testbench
 \begin{figure}[H]
@@ -343,7 +368,7 @@ Gain = 31.54
 \end{enumerate}
 \end{enumerate}
 \section{Problem 5}
-\label{sec:orgaf0e0cb}
+\label{sec:org29f663b}
 \begin{enumerate}[(a)]
 \item Procedure for designing V\textsubscript{b} for M1 to be 100mV away from triode, V\textsubscript{b} = 0.825V, is determined by the following:
 \begin{enumerate}[1.]
@@ -389,7 +414,7 @@ V_{x} &= V_{in} - V_{TH1} + 100mV \\
 \end{enumerate}
 
 \section{Problem 6}
-\label{sec:orgf342922}
+\label{sec:org558fb6b}
 The output resistance, R\textsubscript{out} is the reciprocal of the slope of I\textsubscript{OUT}-V\textsubscript{OUT},
 \begin{equation*}
 \begin{aligned}
