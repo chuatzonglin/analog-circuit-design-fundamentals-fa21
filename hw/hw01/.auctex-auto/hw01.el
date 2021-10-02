@@ -3,13 +3,13 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("fontenc" "T1") ("ulem" "normalem") ("geometry" "a4paper" "left=0.5in" "right=0.5in" "top=0.5in" "bottom=1in")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -32,10 +32,10 @@
     "float"
     "enumerate")
    (LaTeX-add-labels
-    "sec:orgf69ff5a"
-    "sec:org41dfd7f"
-    "sec:org6f87d65"
-    "sec:org111d640"
+    "sec:orga03d1af"
+    "sec:org2d92f33"
+    "sec:org4e27edf"
+    "sec:org4b234f6"
     "fig:nmos-testbench"
     "fig:nmos-id-vgs"
     "fig:pmos-testbench"
@@ -44,18 +44,18 @@
     "fig:nmos-sqrt-id-vgs"
     "fig:pmos-ucox-vgs"
     "fig:nmos-sqrt-is-vgs"
-    "sec:orgb80d945"
+    "sec:org2889fa9"
     "fig:nmos-testbench-2"
     "fig:nmos-id-vds"
     "fig:pmos-testbench-2"
     "fig:nmos-d-id-id"
     "fig:nmos-d-is-is"
-    "sec:org23eb4dc"
+    "sec:org721eaad"
     "fig:nmos-d-id-id-vgs"
     "fig:pmos-d-is-is-vgs"
-    "sec:orgcdfbdee"
+    "sec:org7f97a39"
     "fig:small-signal-model"
-    "sec:orgdabdd0d"
+    "sec:org3947a43"
     "fig:cir1-vout-cal"
     "fig:cir1-vout-sim-cal"
     "fig:cir1-dvout"

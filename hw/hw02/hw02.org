@@ -483,7 +483,7 @@ b) Small-signal model
 a) Procedure for designing V_{b} for M1 to be 100mV away from triode, V_{b} = 0.825V, is determined by the following:
    #+ATTR_LATEX: :options [1.]
    1. Select an initial value V_{b} for M1 and M2 to be in saturation when V_{in} > V_{TH1}. In figure [[fig:testbench-q5]], V_{b} = 1.5 V.
-      From the error logfile [[fig:errorlog-q5]], V_{DS1} > V_{GS1} - V_{TH1} and V_{DS2} > V_{GS2} - V_{TH2}.
+      From the error logfile in figure [[fig:errorlog-q5]], V_{DS1} > V_{GS1} - V_{TH1} and V_{DS2} > V_{GS2} - V_{TH2}.
       #+CAPTION: Testbench for Q5
       #+NAME: fig:testbench-q5
       #+attr_latex: :width 300px
