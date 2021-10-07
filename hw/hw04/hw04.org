@@ -1,0 +1,324 @@
+#+TITLE: EE4C10 Analog Circuit Design Fundamentals
+#+SUBTITLE: Homework Assignment IV
+#+AUTHOR: Tzong Lin Chua
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header: \usepackage[a4paper,left=0.5in,right=0.5in,top=0.5in,bottom=1in]{geometry}
+#+latex_header: \usepackage{float}
+#+LATEX_HEADER: \usepackage{enumerate}
+#+latex_header_extra: \DeclareUnicodeCharacter{2212}{-}
+#+latex_header_extra: \setcounter{secnumdepth}{0}
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+#+STARTUP: overview
+
+* Simulation Files
+Each question with simulation files will have their respective subfolder.
+
+Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
+The folders for each question are arranged as follows after extracting:
+
+|-------+----+---|
+| spice |    |   |
+|       | q3 |   |
+|       |    | a |
+|       |    | b |
+|       |    | c |
+|       |    | d |
+|       | q4 |   |
+|       |    | a |
+|       |    | b |
+|       |    | c |
+|-------+----+---|
+* Problem 1
+#+ATTR_LATEX: :options [(a)]
+a) DC gain, $|\frac{V_{out}}{V_{in}}|$
+
+   KCL at drain node,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{V_{out}}{R_{D}} &= (g_{m} + g_{mb})v_{s} \\
+   \frac{V_{out}}{v_{s}} &= (g_{m} + g_{mb})R_{D} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   KCL at source node,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{V_{in} - V_{S}}{R_{S}} &= (g_{m} + g_{mb})v_{s} \\
+   \frac{V_{in}}{v_{s}} &= R_{S}(g_{m} + g_{mb}) + 1 \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   DC gain,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}}{V_{in}}| &= \frac{(g_{m} + g_{mb})R_{D}}{(g_{m} + g_{mb})R_{S} + 1} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+b) Pole of output node, $\omega_{p,out}$
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   R_{out} &= R_{D} \\
+   C_{out} &= C_{DB} + C_{GD} \\
+   \\
+   \omega_{p,out} &= \frac{1}{R_{D}(C_{DB} + C_{GD})} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+c) Input impedance,
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   Z_{IN} &= \frac{1}{g_{m} + g_{mb} + s(C_{GS} + C_{SB})} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+d) Source capacitance, $C_{S}$, and input pole, $\omega_{p, in}$,
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   C_{S} &= C_{GS} + C_{SB} \\
+   \\
+   \omega_{p, in} &= \frac{g_{m} + g_{mb} + R_{S}^{-1}}{C_{S}} \\
+   &= \frac{g_{m} + g_{mb} + R_{S}^{-1}}{C_{GS} + C_{SB}} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+* Problem 2
+#+ATTR_LATEX: :options [(a)]
+a) Transfer function, $\frac{V_{out}(s)}{V_{in}(s)}$,
+
+   DC gain,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}(S)}{V_{in}(s)}| &= 1 \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   Poles at gate and source nodes,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \omega_{p,G} &= \frac{1}{R_{S}(C_{GB} + G_{GD})} \\
+   \\
+   \omega_{p,D} &= \frac{g_{m}}{C_{SB}} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   Transfer function,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \frac{V_{out}(S)}{V_{in}(s)} &= \frac{1}{1 + sR_{S}(C_{GB} + G_{GD})}\frac{1}{1 + s\frac{C_{SB}}{g_{m}}} \\
+   &= \frac{1}{(1 + sR_{S}(C_{GB} + G_{GD}))(1 + \frac{sC_{SB}}{g_{m}})} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+b) Poles at gate and source nodes,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   \omega_{p,G} &= \frac{1}{R_{S}(C_{GB} + G_{GD})} \\
+   \\
+   \omega_{p,D} &= \frac{g_{m}}{C_{SB}} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+c) Input impedance,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   Z_{in} &= \frac{1}{s(C_{GB} + C_{GD})} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+* Problem 3
+#+ATTR_LATEX: :options [(a)]
+a) Testbench,
+   #+CAPTION: Inverter testbench
+   #+NAME: fig:inv-q3
+   #+attr_latex: :height 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/inverter.pdf]]
+
+   DC transfer curve,
+   #+CAPTION: Inverter DC response
+   #+NAME: fig:vout-vin-dc-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/vout-vin-dc.pdf]]
+
+b) Transient response,
+
+   #+CAPTION: Inverter transient response
+   #+NAME: fig:trans-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/transient.pdf]]
+c) AC responce
+
+   #+CAPTION: Inverter AC gain
+   #+NAME: fig:gain-c-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/gain-c.pdf]]
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}}{V_{in}}| &= 32.7dB \\
+   &= 43.2 \\
+   \omega_{p} &= 2\pi{}f_{-3dB} \\
+   &= 5.136 \times 10^{9} rad s^{-1} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   # Gain = 43.2 dB
+
+   # Pole = 817.37489MHz
+
+   #+begin_src python :exports none
+   import numpy as np
+   RC = 2*np.pi*817.37489e6
+   return RC
+   #+end_src
+
+   #+RESULTS:
+   : 5 135 717 899.305531
+
+d) AC Response
+
+   #+CAPTION: Inverter AC gain with output capacitor
+   #+NAME: fig:gain-d-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q3/gain-d.pdf]]
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}}{V_{in}}| &= 32.7 dB \\
+   &= 43.2 \\
+   \omega_{p} &= 2\pi{}f_{-3dB} \\
+   &= 7.42 \times 10^{4} rad s^{-1} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   # Gain = 43.2
+
+   # Pole = 11.810881KHz
+
+   #+begin_src python :exports none
+   import numpy as np
+   RC = 2*np.pi*11.810881e3
+   return RC
+   #+end_src
+
+   #+RESULTS:
+   : 74209.95396404654
+
+e) The pole at output node,
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   RC &= \frac{1}{2\pi{}f_{c}} \\
+   R(C + \Delta{}C) &= \frac{1}{2\pi{}f_{d}} \\
+   \\
+   R &= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
+   &= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
+   R_{out} &= 134.75 k\Omega \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+begin_src python :exports none
+   import numpy as np
+   w1 = 5135717899.305531
+   w2 = 74209.95396404654
+   rv = 1/w2 - 1/w1
+   rv /= 0.1e-9
+   return rv
+   #+end_src
+
+   #+RESULTS:
+   : 134750.86518881685
+
+* Problem 4
+#+ATTR_LATEX: :options [(a)]
+a) Testbench
+   #+CAPTION: Testbench
+   #+NAME: fig:testbench-q4
+   #+attr_latex: :height 300px
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/testbench.pdf]]
+
+   DC transfer curve,
+   #+CAPTION: DC response
+   #+NAME: fig:vout-vin-dc-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/vout-vin-dc.pdf]]
+
+b) Transient response,
+
+   #+CAPTION: Transient response
+   #+NAME: fig:trans-q4
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/transient.pdf]]
+
+c) AC response
+
+   #+CAPTION: Inverter AC gain
+   #+NAME: fig:gain-c-q3
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q4/gain-c.pdf]]
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}}{V_{in}}| &= 15.7 dB \\
+   &= 6.06 \\
+   \omega_{p} &= 2\pi{}f_{-3dB} \\
+   &= 3.35 \times 10^{4} rad s^{-1} \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   # Gain = 15.66338dB
+
+   # f = 5.330944KHz
+
+d) Gain bandwidth product, GBWP
+
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   |\frac{V_{out}}{V_{in}}| &= 6.06 \\
+   f_{-3dB} &= 5.331 kHz \\
+   \\
+   GBWP &= 32.3 kHz \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export

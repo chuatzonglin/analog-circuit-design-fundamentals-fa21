@@ -1,0 +1,43 @@
+Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\hw\hw04\spice\q3\b\inverter.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu Oct 07 19:12:35 2021
+Total elapsed time: 7.544 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1000039
+traniter = 1000034
+tranpoints = 500018
+accept = 500018
+rejected = 0
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1: 132 bytes object code size  0.0/0.0/[0.0]
+Matrix Compiler2: 335 bytes object code size  0.1/0.0/[0.0]
+
