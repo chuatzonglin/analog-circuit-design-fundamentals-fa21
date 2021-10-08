@@ -1,4 +1,4 @@
-% Created 2021-10-07 Thu 21:12
+% Created 2021-10-08 Fri 13:24
 % Intended LaTeX compiler: pdflatex
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 
 
 \section{Simulation Files}
-\label{sec:orge015c8c}
+\label{sec:org7ffe627}
 Each question with simulation files will have their respective subfolder.
 
 Running the simulation files should be able to directly plot the graphs used (configured in the *.plt file).
@@ -61,7 +61,7 @@ spice &  & \\
 \end{tabular}
 \end{center}
 \section{Problem 1}
-\label{sec:org735a64e}
+\label{sec:org2fb1c6b}
 \begin{enumerate}[(a)]
 \item DC gain, \(|\frac{V_{out}}{V_{in}}|\)
 
@@ -120,7 +120,7 @@ C_{S} &= C_{GS} + C_{SB} \\
 \end{enumerate}
 
 \section{Problem 2}
-\label{sec:org6c1cb10}
+\label{sec:org6c3ba6c}
 \begin{enumerate}[(a)]
 \item Transfer function, \(\frac{V_{out}(s)}{V_{in}(s)}\),
 
@@ -165,7 +165,7 @@ Z_{in} &= \frac{1}{s(C_{GB} + C_{GD})} \\
 \end{equation*}
 \end{enumerate}
 \section{Problem 3}
-\label{sec:org2eff285}
+\label{sec:orgdf846e0}
 \begin{enumerate}[(a)]
 \item Testbench,
 \begin{figure}[H]
@@ -222,22 +222,20 @@ DC transfer curve,
 \end{aligned}
 \end{equation*}
 
-\item The pole at output node,
+\item The pole at output node.
 
+Since the added capacitance is much larger than capacitance of the transistors.
 \begin{equation*}
 \begin{aligned}
-RC &= \frac{1}{2\pi{}f_{c}} \\
-R(C + \Delta{}C) &= \frac{1}{2\pi{}f_{d}} \\
+RC &\approx \frac{1}{2\pi{}f_{d}} \\
 \\
-R &= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
-&= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
 R_{out} &= 134.75 k\Omega \\
 \end{aligned}
 \end{equation*}
 \end{enumerate}
 
 \section{Problem 4}
-\label{sec:org3a0d5f5}
+\label{sec:orgef146bd}
 \begin{enumerate}[(a)]
 \item Testbench
 \begin{figure}[H]

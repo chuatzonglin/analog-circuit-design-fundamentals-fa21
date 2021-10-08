@@ -32,16 +32,16 @@
     "float"
     "enumerate")
    (LaTeX-add-labels
-    "sec:orge015c8c"
-    "sec:org735a64e"
-    "sec:org6c1cb10"
-    "sec:org2eff285"
+    "sec:org7ffe627"
+    "sec:org2fb1c6b"
+    "sec:org6c3ba6c"
+    "sec:orgdf846e0"
     "fig:inv-q3"
     "fig:vout-vin-dc-q3"
     "fig:trans-q3"
     "fig:gain-c-q3"
     "fig:gain-d-q3"
-    "sec:org3a0d5f5"
+    "sec:orgef146bd"
     "fig:testbench-q4"
     "fig:trans-q4"))
  :latex)

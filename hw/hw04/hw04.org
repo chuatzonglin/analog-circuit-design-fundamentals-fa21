@@ -239,16 +239,14 @@ d) AC Response
    #+RESULTS:
    : 74209.95396404654
 
-e) The pole at output node,
+e) The pole at output node.
 
+   Since the added capacitance is much larger than capacitance of the transistors.
    #+begin_export latex
    \begin{equation*}
    \begin{aligned}
-   RC &= \frac{1}{2\pi{}f_{c}} \\
-   R(C + \Delta{}C) &= \frac{1}{2\pi{}f_{d}} \\
+   RC &\approx \frac{1}{2\pi{}f_{d}} \\
    \\
-   R &= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
-   &= \frac{1}{\Delta{}C}(\frac{1}{2\pi{}f_{d}} - \frac{1}{2\pi{}f_{c}}) \\
    R_{out} &= 134.75 k\Omega \\
    \end{aligned}
    \end{equation*}
@@ -258,13 +256,13 @@ e) The pole at output node,
    import numpy as np
    w1 = 5135717899.305531
    w2 = 74209.95396404654
-   rv = 1/w2 - 1/w1
+   rv = 1/w2
    rv /= 0.1e-9
    return rv
    #+end_src
 
    #+RESULTS:
-   : 134750.86518881685
+   : 134752.81233626461
 
 * Problem 4
 #+ATTR_LATEX: :options [(a)]

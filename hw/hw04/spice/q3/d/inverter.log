@@ -23,9 +23,38 @@ Warning: Ps = 0 is less than W.
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m1          m2
+Model:      nch.1       pch.1
+Id:        1.48e-05   -1.48e-05
+Vgs:       9.00e-01   -9.00e-01
+Vds:       9.50e-01   -8.50e-01
+Vbs:       0.00e+00    0.00e+00
+Vth:       1.05e+00   -7.82e-01
+Vdsat:     3.04e-02   -1.35e-01
+Gm:        1.79e-04    1.40e-04
+Gds:       3.52e-06    3.88e-06
+Gmb        3.92e-05    4.96e-05
+Cbd:       0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00
+Cgsov:     1.13e-15    3.18e-16
+Cgdov:     1.13e-15    3.18e-16
+Cgbov:     3.18e-17    4.83e-17
+dQgdVgb:   2.94e-15    1.71e-15
+dQgdVdb:  -1.13e-15   -3.18e-16
+dQgdVsb:  -1.16e-15   -1.17e-15
+dQddVgb:  -1.13e-15   -3.19e-16
+dQddVdb:   1.13e-15    3.18e-16
+dQddVsb:   2.46e-20    9.97e-19
+dQbdVgb:  -6.48e-16   -2.00e-16
+dQbdVdb:   2.08e-21    3.89e-21
+dQbdVsb:  -1.12e-17   -3.17e-16
 
-Date: Thu Oct 07 20:45:03 2021
-Total elapsed time: 0.126 seconds.
+
+
+Date: Fri Oct 08 13:18:15 2021
+Total elapsed time: 0.116 seconds.
 
 tnom = 27
 temp = 27
