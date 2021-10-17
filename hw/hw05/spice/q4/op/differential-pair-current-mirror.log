@@ -1,0 +1,99 @@
+Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\hw\hw05\spice\q4\op\differential-pair-current-mirror.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m6          m5          m4          m3          m2
+Model:      pch.2       pch.2       nch.2       nch.2       nch.2
+Id:       -2.45e-05   -2.45e-05    5.00e-05    4.90e-05    2.45e-05
+Vgs:      -5.29e-01   -5.29e-01    5.30e-01    5.30e-01    6.07e-01
+Vds:      -5.29e-01   -5.29e-01    5.30e-01    2.93e-01    9.77e-01
+Vbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00   -2.93e-01
+Vth:      -4.57e-01   -4.57e-01    4.81e-01    4.81e-01    5.60e-01
+Vdsat:    -1.07e-01   -1.07e-01    1.13e-01    1.13e-01    1.13e-01
+Gm:        3.63e-04    3.63e-04    7.72e-04    7.58e-04    3.82e-04
+Gds:       1.56e-06    1.56e-06    3.20e-06    5.86e-06    1.25e-06
+Gmb        1.18e-04    1.18e-04    2.25e-04    2.20e-04    9.61e-05
+Cbd:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgsov:     2.46e-14    2.46e-14    1.10e-14    1.10e-14    5.49e-15
+Cgdov:     2.46e-14    2.46e-14    1.10e-14    1.10e-14    5.49e-15
+Cgbov:     2.73e-16    2.73e-16    1.81e-16    1.81e-16    1.81e-16
+dQgdVgb:   4.57e-13    4.57e-13    1.64e-13    1.64e-13    8.04e-14
+dQgdVdb:  -2.46e-14   -2.46e-14   -1.10e-14   -1.12e-14   -5.48e-15
+dQgdVsb:  -3.89e-13   -3.89e-13   -1.26e-13   -1.26e-13   -6.32e-14
+dQddVgb:  -2.54e-14   -2.54e-14   -1.13e-14   -1.20e-14   -5.53e-15
+dQddVdb:   2.48e-14    2.48e-14    1.11e-14    1.14e-14    5.49e-15
+dQddVsb:   8.94e-16    8.94e-16    3.07e-16    9.38e-16    4.45e-17
+dQbdVgb:  -7.58e-14   -7.58e-14   -2.41e-14   -2.40e-14   -1.11e-14
+dQbdVdb:  -4.11e-17   -4.11e-17   -2.89e-18   -4.92e-17    2.32e-18
+dQbdVsb:  -7.47e-14   -7.47e-14   -3.69e-14   -3.70e-14   -1.52e-14
+
+Name:        m1
+Model:      nch.2
+Id:        2.45e-05
+Vgs:       6.07e-01
+Vds:       9.77e-01
+Vbs:      -2.93e-01
+Vth:       5.60e-01
+Vdsat:     1.13e-01
+Gm:        3.82e-04
+Gds:       1.25e-06
+Gmb        9.61e-05
+Cbd:       0.00e+00
+Cbs:       0.00e+00
+Cgsov:     5.49e-15
+Cgdov:     5.49e-15
+Cgbov:     1.81e-16
+dQgdVgb:   8.04e-14
+dQgdVdb:  -5.48e-15
+dQgdVsb:  -6.32e-14
+dQddVgb:  -5.53e-15
+dQddVdb:   5.49e-15
+dQddVsb:   4.45e-17
+dQbdVgb:  -1.11e-14
+dQbdVdb:   2.32e-18
+dQbdVsb:  -1.52e-14
+
+
+
+Date: Sat Oct 16 02:59:00 2021
+Total elapsed time: 0.112 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 13
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 12
+fillins = 0
+solver = Normal
+Matrix Compiler1: 428 bytes object code size
+Matrix Compiler2: 900 bytes object code size
