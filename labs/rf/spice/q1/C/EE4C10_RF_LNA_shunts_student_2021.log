@@ -1,0 +1,43 @@
+Circuit: * C:\Users\User\Desktop\Chua_TL\tu-delft\Q1\analog-circuit-design-fundamentals-fa21\labs\rf\spice\q1\C\EE4C10_RF_LNA_shunts_student_2021.asc
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter LDIF
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter TLEV
+Ignoring BSIM parameter TLEVC
+Ignoring BSIM parameter CALCACM
+Ignoring BSIM parameter SFVTFLAGl
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m1
+Model:      nch.3
+Id:        3.18e-09
+Vgs:       0.00e+00
+Vds:       1.80e+00
+Vbs:       0.00e+00
+Vth:       5.08e-01
+Vdsat:     4.58e-02
+Gm:        9.15e-08
+Gds:       1.14e-09
+Gmb        2.90e-08
+Cbd:       0.00e+00
+Cbs:       0.00e+00
+Cgsov:     7.33e-14
+Cgdov:     7.33e-14
+Cgbov:     1.59e-16
+dQgdVgb:   2.38e-13
+dQgdVdb:  -7.33e-14
+dQgdVsb:  -7.33e-14
+dQddVgb:  -7.33e-14
+dQddVdb:   7.33e-14
+dQddVsb:   1.97e-23
+dQbdVgb:  -9.19e-14
+dQbdVdb:   4.81e-23
+dQbdVsb:   6.19e-18
+
+

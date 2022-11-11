@@ -1,0 +1,169 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file c:/Users/User/Desktop/Chua_TL/tu-delft/Q1/analog-circuit-design-fundamentals-fa21/labs/rf/rflab.org
+
+
+* Question 1
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-10-19 Tue 23:03
+  :ARCHIVE_FILE: c:/Users/User/Desktop/Chua_TL/tu-delft/Q1/analog-circuit-design-fundamentals-fa21/labs/rf/rflab.org
+  :ARCHIVE_OLPATH: Part 1
+  :ARCHIVE_CATEGORY: rflab
+  :END:
+#+ATTR_LATEX: :options [A.]
+A. Optimum gate width, $W_{g}$, for current budget of $12mA$.
+
+   The maximum current,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   I_{d,max} &= \frac{I_{total}}{N_{fingers} \cdot{} W_{g}} \\
+   W_{g} &= \frac{I_{total}}{N_{fingers} \cdot{} I_{d,max}} \\
+   &= 200 \mu{}m \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   In the case of 5 fingers,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   W_{g,f} &= \frac{W_{g}}{N_{f}}
+   &= 40 \mu{}m \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+
+B. Highest $g_{m}$ of given current budget.
+
+   $g_{m}$ for long channel devices,
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   g_{m} &= \frac{\partial I_{d}}{\partial V_{gs}} \\
+   &\approx \sqrt{2\mu_{n}\C_{OX}\frac{W}{L}I_{D}} \\
+   &\approx 0.0833 S \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+C. Gate biasing conditions.
+
+   Drain current of MOS transistor, using the parameters extracted from LTspice
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   i_{ds} &= \frac{\mu_{n}C_{OX}}{2}\frac{W}{L}(V_{gs} - V_{th})^{2}(1 + \lambda{}V_{ds}) \\
+   V_{gs} &= \sqrt{\frac{2i_{ds}}{\mu_{n}C_{OX}}\frac{L}{W}\frac{1}{1 + \lambda{}V_{ds}}} + V_{th} \\
+   &= 0.766 V \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   Parameter sweep in LTspice in Figure [[fig:id-vgs-q1]], gives a value of
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   V_{gs} &= 0.7 V \\
+   i_{ds} &= 11.9 mA \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   $g_{m}$ in LTspice
+   #+begin_export latex
+   \begin{equation*}
+   \begin{aligned}
+   g_{m} &= 0.0774 S \\
+   \end{aligned}
+   \end{equation*}
+   #+end_export
+
+   #+CAPTION: $I_{ds} - V_{gs}$ sweep
+   #+NAME: fig:id-vgs-q1
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q1/id-vgs.pdf]]
+
+D. Impedance at low frequency:
+   1. Input, $R_{in} = \inf \Omega{}$
+
+   2. Output, $R_{out} = 603 \Omega{}$
+
+   $Z_{out}(V_{s})$ of the amplifier
+   #+CAPTION: $Z_{out}(V_{s})$
+   #+NAME: fig:zout-q1
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q1/rout.pdf]]
+
+E. Impedance at $5.5GHz$:
+   A. Input, $Z_{in} = 2.81 - 45.94i \Omega{}$
+
+   B. Ouput, $R_{out} = 49.98 - 73.59i \Omega{}$
+
+   $Z_{out}(V_{s})$ of the amplifier
+   #+CAPTION: $Z_{out}(V_{s})$
+   #+NAME: fig:zout-q1
+   #+ATTR_LATEX: :placement [H]
+   [[file:img/q1/zin-zout.pdf]]
+
+F. Capacitance of:
+   #+ATTR_LATEX: :options [1.]
+   a. $C_{gs}$
+
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      C_{gs} &= \frac{2WLC_{OX}}{3} + WC_{OV} \\
+      &= \frac{2W_{g}LC_{OX}}{3} + W_{g}C_{OV} \\
+      &= 2.79 \times 10^{-13} F \\
+
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+
+   b. $C_{gd}$
+
+      #+begin_export latex
+      \begin{equation*}
+      \begin{aligned}
+      C_{gd} &= WC_{OV} \\
+      &= W_{g}C_{OV} \\
+      &= 7.32 \times 10^{-14} F \\
+      \end{aligned}
+      \end{equation*}
+      #+end_export
+
+#+begin_src python :exports none
+import numpy as np
+L = 0.18e-6
+Nf = 5
+unCox = 2.6 * 10**-4
+Cox = 8.58 * 10**-3
+Cov = 3.66 * 10**-10
+lmbda = 0.136
+I_dmax = 60
+I_total = 12e-3
+Vth = 5.08e-1
+
+W_g = 12e-3/(I_dmax)
+
+gm = np.sqrt(2*unCox*W_g*I_total/L)
+
+V_gs = (2*I_total/(unCox))*(L/W_g)*(1/(1 + lmbda*1.8))
+V_gs = np.sqrt(V_gs) + Vth
+
+Cgs = (W_g*L*2*Cox/3 + W_g*Cov)
+Cgd = W_g*Cov
+
+Cin = Cgs + Cgd/(1 + 1.94)
+
+L1 = 1/((2*np.pi*5.5e9)**2*Cin)
+
+return [W_g, gm, V_gs, Cgs, Cgd, Cin, L1]
+#+end_src
+
+#+RESULTS:
+| 0.0002 | 0.08326663997864532 | 0.7663392603205677 | 2.7912000000000003e-13 | 7.32e-14 | 3.0401795918367347e-13 | 2.7543279229863203e-09 |
+

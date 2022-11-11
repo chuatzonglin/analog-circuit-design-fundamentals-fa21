@@ -11,14 +11,44 @@ Ignoring BSIM parameter CALCACM
 Ignoring BSIM parameter SFVTFLAGl
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m1
+Model:      nch.5
+Id:        1.00e-06
+Vgs:       9.00e-01
+Vds:       2.29e-03
+Vbs:       0.00e+00
+Vth:       4.82e-01
+Vdsat:     4.03e-01
+Gm:        2.17e-06
+Gds:       4.35e-04
+Gmb        7.03e-07
+Cbd:       0.00e+00
+Cbs:       0.00e+00
+Cgsov:     1.09e-15
+Cgdov:     1.09e-15
+Cgbov:     1.81e-16
+dQgdVgb:   2.66e-14
+dQgdVdb:  -1.31e-14
+dQgdVsb:  -1.35e-14
+dQddVgb:  -1.31e-14
+dQddVdb:   2.44e-14
+dQddVsb:  -7.89e-15
+dQbdVgb:  -2.78e-16
+dQbdVdb:  -3.57e-15
+dQbdVsb:  -2.92e-15
 
-Date: Thu Sep 02 11:00:17 2021
-Total elapsed time: 0.151 seconds.
+
+
+Date: Thu Nov 11 13:31:27 2021
+Total elapsed time: 0.116 seconds.
 
 tnom = 27
 temp = 27
 method = trap
-totiter = 3604
+totiter = 9
 traniter = 0
 tranpoints = 0
 accept = 0
@@ -26,6 +56,5 @@ rejected = 0
 matrix size = 4
 fillins = 0
 solver = Normal
-Matrix Compiler1:       7 opcodes  0.0/[0.0]/0.0
-Matrix Compiler2: 216 bytes object code size  0.0/0.0/[0.0]
-
+Matrix Compiler1: 100 bytes object code size
+Matrix Compiler2: 248 bytes object code size
